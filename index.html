@@ -1,0 +1,3789 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Laura Gabriele · OBM : Reprenez la main sur votre opérationnel</title>
+  <meta name="description" content="Online Business Manager. Je structure et je pilote l'opérationnel des entrepreneurs débordés pour qu'ils se concentrent enfin sur ce qui compte vraiment."/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #f6f1e9;
+      --white: #1f1c18;
+      --gray-100: #2a2622;
+      --gray-200: #38332d;
+      --gray-300: #4f4840;
+      --gray-400: #6b6359;
+      --gray-500: #8a8073;
+      --gray-600: #a89e8f;
+      --gray-700: #c5bbab;
+      --gray-800: #ddd3c2;
+      --gray-900: #ebe3d6;
+      --gray-950: #f1ebdf;
+      
+      --purple-300: #d98a66;
+      --purple-400: #bb5638;
+      --purple-500: #a94e33;
+      --purple-600: #97462d;
+      --purple-700: #843d27;
+      
+      --cyan-300: #9db89d;
+      --cyan-400: #7d9482;
+      --cyan-500: #5b6e5a;
+      
+      --pink-400: #d98a6e;
+      --pink-500: #cf6d4a;
+      
+      --green-400: #6f8a5f;
+      --green-500: #5c7650;
+      
+      --red-400: #d98a6e;
+      --red-500: #c65d45;
+      
+      --amber-400: #caa852;
+      --amber-500: #c08a3c;
+    }
+
+    html { scroll-behavior: smooth; background: var(--black); }
+
+    body {
+      font-family: 'Outfit', -apple-system, sans-serif;
+      background-color: var(--black);
+      background-image:
+        linear-gradient(rgba(31,28,24,0.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(31,28,24,0.022) 1px, transparent 1px);
+      background-size: 58px 58px;
+      background-position: center top;
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 { 
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800; 
+      letter-spacing: -0.04em; 
+      line-height: 0.95; 
+    }
+    h1 { font-size: clamp(2.6rem, 6.2vw, 5rem); margin-bottom: 40px; }
+    .hero h1 span { white-space: normal !important; }
+    h2 { font-size: clamp(2.5rem, 7vw, 5rem); margin-bottom: 32px; }
+    h3 { font-size: clamp(1.8rem, 4.5vw, 3rem); margin-bottom: 24px; }
+    h4 { font-size: clamp(1.3rem, 2.5vw, 1.75rem); margin-bottom: 16px; }
+    
+    .serif { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+
+    p { font-size: 1.0625rem; line-height: 1.8; color: var(--gray-300); font-weight: 400; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+    .container-narrow { max-width: 880px; margin: 0 auto; padding: 0 32px; }
+    .section { padding: 140px 0; }
+
+    .label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6875rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--purple-400);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+      padding: 7px 16px 7px 13px;
+      border: 1px solid rgba(31,28,24,0.14);
+      border-radius: 7px;
+      background: rgba(187,86,56,0.05);
+    }
+    .label::before {
+      content: '';
+      width: 7px; height: 7px;
+      background: currentColor;
+      border-radius: 2px;
+      box-shadow: 0 0 0 3px rgba(187,86,56,0.12);
+      flex-shrink: 0;
+    }
+
+    .gradient-text {
+      color: var(--purple-400);
+      -webkit-text-fill-color: var(--purple-400);
+    }
+    .hero-highlight {
+      color: var(--purple-400);
+      -webkit-text-fill-color: var(--purple-400);
+      position: relative;
+    }
+    .hero-highlight::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0.04em;
+      height: 0.14em;
+      background: rgba(187,86,56,0.18);
+      border-radius: 2px;
+      z-index: -1;
+    }
+    @keyframes heroShimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    .gradient-text-warm {
+      background: linear-gradient(135deg, var(--purple-400), var(--pink-400));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 18px 44px;
+      background: linear-gradient(180deg, #b85333, #a3492c);
+      color: #fdfaf4;
+      text-decoration: none;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 1rem;
+      font-family: 'Outfit', sans-serif;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(158,77,55,0.25), 0 4px 16px rgba(91,110,90,0.15);
+    }
+    .btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.22), transparent 50%);
+      opacity: 0;
+      transition: opacity 0.35s;
+    }
+    .btn:hover { 
+      transform: translateY(-3px); 
+      box-shadow: 0 16px 48px rgba(158,77,55,0.35), 0 8px 24px rgba(91,110,90,0.2);
+    }
+    .btn:hover::after { opacity: 1; }
+    .btn-lg { padding: 22px 56px; font-size: 1.125rem; border-radius: 16px; }
+    .hero-cta-row .btn-lg:first-child {
+      background: linear-gradient(180deg, #b85333, #a3492c);
+      box-shadow: 0 8px 32px rgba(158,77,55,0.3), 0 4px 16px rgba(91,110,90,0.15);
+      animation: heroCTAPulse 3s ease-in-out infinite;
+    }
+    @keyframes heroCTAPulse {
+      0%, 100% { box-shadow: 0 8px 32px rgba(158,77,55,0.3), 0 4px 16px rgba(91,110,90,0.15); }
+      50% { box-shadow: 0 8px 40px rgba(158,77,55,0.45), 0 4px 24px rgba(91,110,90,0.25); }
+    }
+    .hero-cta-row .btn-lg:first-child:hover {
+      animation: none;
+      box-shadow: 0 16px 48px rgba(158,77,55,0.4), 0 8px 24px rgba(91,110,90,0.25);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(40,38,34,0.2);
+      box-shadow: none;
+    }
+    .btn-ghost:hover {
+      background: rgba(40,38,34,0.05);
+      border-color: rgba(40,38,34,0.25);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(246,241,233,0.9);
+      backdrop-filter: blur(20px) saturate(1.1);
+      -webkit-backdrop-filter: blur(20px) saturate(1.1);
+      border-bottom: 1px solid rgba(31,28,24,0.09);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 20px 32px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .nav-logo { font-size: 1.375rem; font-weight: 900; color: var(--white); text-decoration: none; letter-spacing: -0.04em; }
+    .nav-logo span { color: var(--purple-400); }
+    .nav-links { display: flex; gap: 40px; list-style: none; align-items: center; }
+    .nav-links a { color: var(--gray-400); text-decoration: none; font-size: 0.875rem; font-weight: 600; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { padding: 12px 28px !important; font-size: 0.875rem !important; border-radius: 10px !important; box-shadow: 0 4px 20px rgba(158,77,55,0.3), 0 2px 10px rgba(91,110,90,0.2) !important; }
+
+    /* ======== HERO ======== */
+    .hero {
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+      padding: 180px 32px 100px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -40%; left: 50%; transform: translateX(-50%);
+      width: 160%; height: 160%;
+      background: radial-gradient(ellipse 50% 35% at 50% 35%, rgba(194,103,78,0.18), rgba(125,148,130,0.08) 40%, transparent 65%);
+      pointer-events: none; animation: heroBreath 10s ease-in-out infinite;
+    }
+    @keyframes heroBreath {
+      0%, 100% { opacity: 1; transform: translateX(-50%) scale(1); }
+      50% { opacity: 0.75; transform: translateX(-50%) scale(1.08); }
+    }
+    .hero-content { max-width: 1120px; position: relative; z-index: 1; }
+    .pre-headline {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem;
+      letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-400);
+      margin-bottom: 28px; font-weight: 500;
+    }
+    .hero-sub { max-width: 720px; margin: 0 auto 56px; font-size: 1.25rem; color: var(--gray-200); line-height: 1.7; }
+    .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; max-width: 760px; margin: 0 auto 56px; border: 1px solid rgba(31,28,24,0.12); border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.45); }
+    .hero-stat {
+      text-align: left; padding: 20px 22px; border-right: 1px solid rgba(31,28,24,0.09);
+      transition: background 0.3s ease;
+    }
+    .hero-stat:last-child { border-right: none; }
+    .hero-stat:hover { background: rgba(187,86,56,0.045); }
+    .hero-stat-val { font-size: 2.1rem; font-weight: 800; line-height: 1; margin-bottom: 10px; letter-spacing: -0.03em; }
+    .hero-stat-lbl { font-family: 'JetBrains Mono', monospace; font-size: 0.625rem; color: var(--gray-400); font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; }
+    .hero-cta-row { display: flex; gap: 20px; justify-content: center; align-items: center; flex-wrap: wrap; }
+    .guarantee-micro {
+      margin-top: 48px; display: inline-flex; align-items: center; gap: 12px;
+      padding: 14px 28px; background: rgba(111,138,95,0.06); border: 1px solid rgba(111,138,95,0.2);
+      border-radius: 100px; font-size: 0.875rem; color: var(--green-400); font-weight: 600;
+    }
+
+    /* ABOUT / WHO — PHOTO SECTION */
+    .about-split {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 52px;
+      align-items: center;
+      max-width: 960px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .about-photo-col {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .about-photo-wrapper {
+      position: relative;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .about-photo-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: -32px;
+      border-radius: 50%;
+      background: conic-gradient(
+        from 200deg,
+        rgba(194,103,78,0.25),
+        rgba(125,148,130,0.12) 120deg,
+        rgba(207,109,74,0.08) 240deg,
+        rgba(194,103,78,0.25)
+      );
+      filter: blur(28px);
+      z-index: 0;
+      animation: photoGlowPulse 5s ease-in-out infinite alternate;
+    }
+    @keyframes photoGlowPulse {
+      0% { opacity: 0.5; transform: scale(1) rotate(0deg); }
+      100% { opacity: 1; transform: scale(1.06) rotate(8deg); }
+    }
+    .about-photo {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 50%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), filter 0.6s ease;
+      filter: brightness(1.02) contrast(1.04);
+    }
+    .about-photo-wrapper:hover .about-photo {
+      transform: scale(1.04);
+      filter: brightness(1.08) contrast(1.06);
+    }
+    .about-photo-glow {
+      position: absolute;
+      bottom: -24px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 75%;
+      height: 56px;
+      background: radial-gradient(ellipse, rgba(194,103,78,0.3), rgba(125,148,130,0.08) 50%, transparent 75%);
+      filter: blur(22px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .about-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6875rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--purple-400);
+      font-weight: 600;
+      margin-top: 22px;
+      text-align: center;
+    }
+    .about-name span {
+      display: block;
+      font-size: 0.5625rem;
+      color: var(--gray-500);
+      letter-spacing: 0.15em;
+      margin-top: 4px;
+      font-weight: 400;
+    }
+    .about-text p {
+      font-size: 1.0625rem;
+      line-height: 1.9;
+      margin-bottom: 22px;
+    }
+    @media (max-width: 768px) {
+      .about-split {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .about-photo-wrapper {
+        width: 260px;
+        height: 260px;
+      }
+      .about-photo-col {
+        margin: 0 auto;
+      }
+    }
+
+    /* PROOF BAR */
+    .proof-bar { padding: 40px 0; border-top: 1px solid rgba(31,28,24,0.08); border-bottom: 1px solid rgba(31,28,24,0.08); background: rgba(31,28,24,0.012); }
+    .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
+    .proof-val { font-size: 1.85rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 6px; }
+    .proof-lbl { font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem; color: var(--gray-500); font-weight: 500; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.1em; }
+
+    /* CARD (universal — no lists) */
+    .card {
+      padding: 30px 28px; border-radius: 12px;
+      border: 1px solid rgba(31,28,24,0.10); background: rgba(255,255,255,0.42);
+      transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+    }
+    .card:hover { border-color: rgba(187,86,56,0.35); box-shadow: 0 10px 30px rgba(31,28,24,0.06); transform: translateY(-3px); }
+    .card-icon { font-size: 1.5rem; margin-bottom: 16px; }
+    .card-title { font-size: 1.125rem; font-weight: 800; color: var(--white); margin-bottom: 10px; letter-spacing: -0.02em; }
+    .card-desc { font-size: 0.875rem; color: var(--gray-400); line-height: 1.6; }
+
+    /* PAIN CARDS */
+    .pain-card {
+      padding: 24px 26px; border-radius: 12px;
+      border: 1px solid rgba(31,28,24,0.10); background: rgba(255,255,255,0.42);
+      transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .pain-card:hover { border-color: rgba(187,86,56,0.3); box-shadow: 0 8px 24px rgba(31,28,24,0.05); transform: translateY(-2px); }
+
+    /* ICEBERG — TRUE PYRAMID VISUALIZATION */
+    .iceberg-scene {
+      position: relative;
+      max-width: 780px;
+      margin: 56px auto 0;
+      padding: 0 20px;
+    }
+    .iceberg-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.625rem;
+      color: var(--gray-500);
+      text-align: center;
+      margin-bottom: 24px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .iceberg-shape {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+    }
+
+    /* Each tier is a trapezoid that widens */
+    .ice-tier {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 56px;
+      border-radius: 8px;
+      transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+      overflow: visible;
+      cursor: default;
+    }
+    .ice-tier::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      border-radius: inherit;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .ice-tier:hover {
+      transform: scale(1.02);
+      z-index: 2;
+    }
+
+    /* Tier content layout */
+    .ice-tier-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 14px 20px;
+      gap: 12px;
+    }
+    .ice-tier-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .ice-tier-pct {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 900;
+      font-size: 1.375rem;
+      line-height: 1;
+      flex-shrink: 0;
+      min-width: 48px;
+      text-align: center;
+    }
+    .ice-tier-name {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.3;
+    }
+    .ice-tier-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5625rem;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-weight: 700;
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+
+    /* === TIER WIDTHS — pyramid shape === */
+    .ice-tier--1 { width: 44%; }   /* 3% — tip */
+    .ice-tier--2 { width: 56%; }   /* 7% */
+    .ice-tier--3 { width: 70%; }   /* 10% */
+    .ice-tier--4 { width: 85%; }   /* 20% */
+    .ice-tier--5 { width: 100%; }  /* 60% — widest base */
+
+    /* === TIER COLORS === */
+    /* Above water — danger red */
+    .ice-tier--1 {
+      background: linear-gradient(135deg, rgba(198,93,69,0.12), rgba(198,93,69,0.06));
+      border: 1px solid rgba(198,93,69,0.15);
+    }
+    .ice-tier--1:hover {
+      box-shadow: 0 8px 32px rgba(198,93,69,0.12);
+      border-color: rgba(198,93,69,0.3);
+    }
+    .ice-tier--1 .ice-tier-pct { color: #c65d45; }
+
+    /* Below water — progressively deeper purple */
+    .ice-tier--2 {
+      background: linear-gradient(135deg, rgba(194,103,78,0.06), rgba(179,90,66,0.04));
+      border: 1px solid rgba(194,103,78,0.1);
+    }
+    .ice-tier--2:hover { box-shadow: 0 8px 32px rgba(194,103,78,0.08); border-color: rgba(194,103,78,0.2); }
+    .ice-tier--2 .ice-tier-pct { color: rgba(194,103,78,0.7); }
+
+    .ice-tier--3 {
+      background: linear-gradient(135deg, rgba(194,103,78,0.09), rgba(179,90,66,0.06));
+      border: 1px solid rgba(194,103,78,0.12);
+    }
+    .ice-tier--3:hover { box-shadow: 0 8px 32px rgba(194,103,78,0.1); border-color: rgba(194,103,78,0.25); }
+    .ice-tier--3 .ice-tier-pct { color: rgba(194,103,78,0.8); }
+
+    .ice-tier--4 {
+      background: linear-gradient(135deg, rgba(194,103,78,0.13), rgba(179,90,66,0.08));
+      border: 1px solid rgba(194,103,78,0.15);
+    }
+    .ice-tier--4:hover { box-shadow: 0 12px 40px rgba(194,103,78,0.12); border-color: rgba(194,103,78,0.3); }
+    .ice-tier--4 .ice-tier-pct { color: rgba(194,103,78,0.9); }
+
+    .ice-tier--5 {
+      background: linear-gradient(135deg, rgba(194,103,78,0.18), rgba(179,90,66,0.12));
+      border: 1px solid rgba(194,103,78,0.2);
+      min-height: 68px;
+    }
+    .ice-tier--5:hover { box-shadow: 0 16px 48px rgba(194,103,78,0.15); border-color: rgba(194,103,78,0.35); }
+    .ice-tier--5 .ice-tier-pct { color: var(--purple-400); font-size: 1.5rem; }
+
+    /* === WATERLINE === */
+    .ice-waterline {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0;
+      margin: 6px 0;
+    }
+    .ice-waterline-line {
+      position: absolute;
+      left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(125,148,130,0.5) 20%, rgba(125,148,130,0.8) 50%, rgba(125,148,130,0.5) 80%, transparent 100%);
+    }
+    .ice-waterline-line::before {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      height: 3px;
+      top: -1px;
+      background: linear-gradient(90deg, transparent 0%, rgba(125,148,130,0.2) 20%, rgba(125,148,130,0.4) 50%, rgba(125,148,130,0.2) 80%, transparent 100%);
+      filter: blur(4px);
+    }
+    /* Animated wave on the waterline */
+    .ice-waterline-wave {
+      position: absolute;
+      left: 0; right: 0;
+      height: 6px;
+      top: -3px;
+      background: linear-gradient(90deg,
+        transparent, rgba(125,148,130,0.0),
+        rgba(125,148,130,0.15), rgba(125,148,130,0.0),
+        rgba(125,148,130,0.2), rgba(125,148,130,0.0),
+        rgba(125,148,130,0.1), rgba(125,148,130,0.0),
+        transparent
+      );
+      background-size: 300% 100%;
+      animation: waveSlide 6s ease-in-out infinite;
+      filter: blur(2px);
+    }
+    @keyframes waveSlide {
+      0%, 100% { background-position: 0% 0; }
+      50% { background-position: 100% 0; }
+    }
+    .ice-waterline-label {
+      position: relative;
+      z-index: 1;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem;
+      color: var(--cyan-400);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      font-weight: 600;
+      background: var(--dark-bg);
+      padding: 0 16px;
+    }
+
+    /* === UNDERWATER GLOW (gradient behind lower tiers) === */
+    .ice-underwater {
+      position: relative;
+    }
+    .ice-underwater::before {
+      content: '';
+      position: absolute;
+      top: -20px; left: 10%; right: 10%; bottom: -20px;
+      background: radial-gradient(ellipse 100% 100% at 50% 30%, rgba(194,103,78,0.06), transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* === + de 90% BOTTOM BOX === */
+    .ice-conclusion {
+      margin-top: 20px;
+      padding: 24px 28px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(194,103,78,0.08), rgba(125,148,130,0.04));
+      border: 1px solid rgba(194,103,78,0.18);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .ice-conclusion::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 15%; right: 15%; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(194,103,78,0.4), rgba(125,148,130,0.3), transparent);
+    }
+    .ice-conclusion-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.875rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, var(--purple-400), var(--cyan-400));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .ice-conclusion p {
+      font-size: 1rem;
+      color: var(--gray-200);
+      font-weight: 600;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* Staggered tier animations */
+    .ice-tier, .ice-waterline, .ice-conclusion { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .iceberg-scene.visible .ice-tier,
+    .iceberg-scene.visible .ice-waterline,
+    .iceberg-scene.visible .ice-conclusion { opacity: 1; transform: translateY(0); }
+    .iceberg-scene.visible .ice-tier--1 { transition-delay: 0.05s; }
+    .iceberg-scene.visible .ice-waterline { transition-delay: 0.15s; }
+    .iceberg-scene.visible .ice-tier--2 { transition-delay: 0.25s; }
+    .iceberg-scene.visible .ice-tier--3 { transition-delay: 0.35s; }
+    .iceberg-scene.visible .ice-tier--4 { transition-delay: 0.45s; }
+    .iceberg-scene.visible .ice-tier--5 { transition-delay: 0.55s; }
+    .iceberg-scene.visible .ice-conclusion { transition-delay: 0.7s; }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .ice-tier--1 { width: 62%; }
+      .ice-tier--2 { width: 72%; }
+      .ice-tier--3 { width: 84%; }
+      .ice-tier--4 { width: 94%; }
+      .ice-tier--5 { width: 100%; }
+      .ice-tier-pct { font-size: 1.125rem; min-width: 40px; }
+      .ice-tier-name { font-size: 0.78rem; }
+      .ice-tier-content { padding: 12px 14px; gap: 8px; }
+      .ice-tier-tag { font-size: 0.5rem; padding: 4px 8px; }
+      .ice-tier--5 .ice-tier-pct { font-size: 1.25rem; }
+    }
+
+    /* CORP CYCLE — ORBITAL SYSTEM */
+    .orbit-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 920px;
+      margin: 56px auto 0;
+      padding-bottom: 92%;
+    }
+    .orbit-container {
+      position: absolute;
+      inset: 0;
+    }
+
+    /* === SVG RING === */
+    .orbit-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+    .orbit-ring-bg {
+      fill: none;
+      stroke: rgba(194,103,78,0.10);
+      stroke-width: 2;
+    }
+    .orbit-ring-dash {
+      fill: none;
+      stroke: url(#orbitGrad);
+      stroke-width: 2.5;
+      stroke-dasharray: 14 8;
+      animation: orbitSpin 40s linear infinite;
+    }
+    .orbit-ring-glow {
+      fill: none;
+      stroke: url(#orbitGrad);
+      stroke-width: 8;
+      stroke-dasharray: 80 400;
+      opacity: 0.35;
+      filter: blur(8px);
+      animation: orbitSpin 20s linear infinite;
+    }
+    @keyframes orbitSpin {
+      to { stroke-dashoffset: -2000; }
+    }
+    .orbit-particle {
+      fill: var(--purple-400);
+      filter: drop-shadow(0 0 6px rgba(194,103,78,0.8));
+    }
+    .orbit-particle-trail {
+      fill: none;
+      stroke: url(#orbitGrad);
+      stroke-width: 3;
+      stroke-dasharray: 60 2000;
+      stroke-linecap: round;
+      opacity: 0.6;
+    }
+
+    /* === CENTER HUB === */
+    .orbit-hub {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+      background: radial-gradient(circle, rgba(235,227,214,0.98) 40%, rgba(194,103,78,0.04) 100%);
+      border: 1px solid rgba(194,103,78,0.12);
+      box-shadow: 0 0 60px rgba(194,103,78,0.08), 0 0 120px rgba(194,103,78,0.04);
+    }
+    .orbit-hub::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, rgba(194,103,78,0.3), rgba(125,148,130,0.15), rgba(194,103,78,0.05), rgba(125,148,130,0.2), rgba(194,103,78,0.3));
+      z-index: -1;
+      animation: hubRotate 12s linear infinite;
+    }
+    .orbit-hub::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(235,227,214,0.99), rgba(239,231,218,0.97));
+    }
+    @keyframes hubRotate { to { transform: rotate(360deg); } }
+    .orbit-hub-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    .orbit-hub-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--purple-400);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .orbit-hub-name {
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, var(--white), var(--gray-300));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .orbit-hub-sub {
+      font-size: 0.5625rem;
+      color: var(--gray-500);
+      margin-top: 2px;
+    }
+
+    /* === ORBITAL CARDS — percentage-based positioning === */
+    .orbit-node {
+      position: absolute;
+      z-index: 3;
+      width: 24%;
+      min-width: 200px;
+      max-width: 240px;
+      opacity: 0;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .orbit-wrapper.visible .orbit-node {
+      opacity: 1;
+    }
+    .orbit-wrapper.visible .orbit-node:nth-child(3) { transition-delay: 0.1s; }
+    .orbit-wrapper.visible .orbit-node:nth-child(4) { transition-delay: 0.2s; }
+    .orbit-wrapper.visible .orbit-node:nth-child(5) { transition-delay: 0.3s; }
+    .orbit-wrapper.visible .orbit-node:nth-child(6) { transition-delay: 0.4s; }
+    .orbit-wrapper.visible .orbit-node:nth-child(7) { transition-delay: 0.5s; }
+    .orbit-wrapper.visible .orbit-node:nth-child(8) { transition-delay: 0.6s; }
+
+    /* 6 positions clockwise — cards sit ON the ring */
+    .orbit-node:nth-child(3) { top: 2%;   left: 50%; transform: translateX(-50%); }      /* 12h — Offre */
+    .orbit-node:nth-child(4) { top: 16%;  right: 3%; transform: none; }                  /* 2h — Visibilité */
+    .orbit-node:nth-child(5) { bottom: 16%; right: 3%; transform: none; }                /* 4h — Acquisition */
+    .orbit-node:nth-child(6) { bottom: 2%; left: 50%; transform: translateX(-50%); }     /* 6h — Transformation */
+    .orbit-node:nth-child(7) { bottom: 16%; left: 3%; transform: none; }                 /* 8h — Delivery */
+    .orbit-node:nth-child(8) { top: 16%;  left: 3%; transform: none; }                   /* 10h — Répétition */
+
+    .orbit-node-inner {
+      padding: 22px 20px;
+      border-radius: 18px;
+      background: rgba(239,231,218,0.96);
+      border: 1px solid rgba(40,38,34,0.06);
+      backdrop-filter: blur(12px);
+      transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+      position: relative;
+      overflow: hidden;
+    }
+    .orbit-node-inner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      border-radius: inherit;
+      pointer-events: none;
+    }
+    .orbit-node:hover .orbit-node-inner {
+      border-color: rgba(194,103,78,0.25);
+      transform: scale(1.03);
+      box-shadow: 0 12px 40px rgba(194,103,78,0.12), 0 0 0 1px rgba(194,103,78,0.1);
+    }
+    .orbit-node-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.625rem;
+      color: var(--purple-400);
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      margin-bottom: 5px;
+    }
+    .orbit-node-icon { font-size: 1.375rem; margin-bottom: 6px; }
+    .orbit-node-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 5px;
+      line-height: 1.2;
+    }
+    .orbit-node-desc {
+      font-size: 0.78rem;
+      color: var(--gray-400);
+      line-height: 1.55;
+    }
+
+    /* === MOBILE TIMELINE === */
+    .orbit-mobile {
+      display: none;
+      margin-top: 48px;
+      position: relative;
+      padding: 0 0 0 48px;
+    }
+    .orbit-mobile::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0; left: 22px;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(194,103,78,0.3), rgba(125,148,130,0.2), rgba(194,103,78,0.3));
+    }
+    .orbit-m-step {
+      position: relative;
+      margin-bottom: 28px;
+      padding: 20px 22px;
+      border-radius: 16px;
+      background: rgba(239,231,218,0.9);
+      border: 1px solid rgba(40,38,34,0.06);
+      transition: all 0.3s;
+    }
+    .orbit-m-step:hover {
+      border-color: rgba(194,103,78,0.15);
+      box-shadow: 0 8px 32px rgba(194,103,78,0.06);
+    }
+    .orbit-m-step::before {
+      content: '';
+      position: absolute;
+      left: -34px; top: 28px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      border: 2px solid var(--purple-400);
+      background: rgba(239,231,218,1);
+      box-shadow: 0 0 12px rgba(194,103,78,0.3);
+    }
+    .orbit-m-step::after {
+      content: '';
+      position: absolute;
+      left: -22px; top: 33px;
+      width: 22px; height: 2px;
+      background: linear-gradient(90deg, rgba(194,103,78,0.3), transparent);
+    }
+    .orbit-m-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5625rem;
+      color: var(--purple-400);
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      margin-bottom: 6px;
+    }
+    .orbit-m-title {
+      font-size: 1.0625rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .orbit-m-desc {
+      font-size: 0.8125rem;
+      color: var(--gray-400);
+      line-height: 1.55;
+    }
+    .orbit-loop-back {
+      margin-top: 8px;
+      padding: 14px 18px;
+      border-radius: 12px;
+      background: rgba(194,103,78,0.04);
+      border: 1px solid rgba(194,103,78,0.1);
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--purple-400);
+      font-weight: 600;
+    }
+
+    @media (max-width: 900px) {
+      .orbit-wrapper { display: none; }
+      .orbit-mobile { display: block; }
+    }
+    @media (min-width: 901px) and (max-width: 1100px) {
+      .orbit-wrapper { max-width: 780px; padding-bottom: 92%; }
+      .orbit-hub { width: 120px; height: 120px; }
+      .orbit-hub-name { font-size: 1rem; }
+      .orbit-node { width: 22%; min-width: 175px; }
+      .orbit-node-desc { font-size: 0.625rem; }
+      .orbit-node-inner { padding: 14px 12px; }
+    }
+
+    /* TRANSFORM GRID */
+    .tf-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 32px; align-items: start; margin-top: 56px; }
+    .tf-col { display: grid; gap: 12px; }
+    .tf-item { padding: 18px 22px; border-radius: 14px; font-size: 0.9375rem; line-height: 1.5; }
+    .tf-before { border: 1px solid rgba(198,93,69,0.12); background: rgba(198,93,69,0.03); color: var(--gray-300); }
+    .tf-after { border: 1px solid rgba(111,138,95,0.12); background: rgba(111,138,95,0.03); color: var(--gray-200); }
+    .tf-arrow { display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: var(--purple-400); padding-top: 60px; }
+
+    /* OFFERS — NO LISTS */
+    .offers-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 28px; margin-top: 64px; }
+    .offer-card {
+      padding: 48px 40px; border-radius: 24px;
+      border: 1px solid rgba(40,38,34,0.06); background: rgba(40,38,34,0.02);
+      position: relative; transition: all 0.35s;
+    }
+    .offer-card:hover { border-color: rgba(40,38,34,0.1); }
+    .offer-card.featured { border: 2px solid var(--purple-500); box-shadow: 0 0 80px rgba(194,103,78,0.12); background: rgba(194,103,78,0.03); }
+    .offer-badge {
+      position: absolute; top: -14px; left: 40px;
+      background: linear-gradient(135deg, var(--purple-600), var(--purple-500));
+      padding: 6px 20px; border-radius: 100px; font-size: 0.6875rem;
+      font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white);
+    }
+    .offer-name { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.03em; margin-bottom: 8px; }
+    .offer-tagline { font-size: 0.875rem; color: var(--gray-400); margin-bottom: 28px; }
+    .offer-price { font-size: 3.5rem; font-weight: 900; letter-spacing: -0.04em; line-height: 1; margin-bottom: 4px; }
+    .offer-old { font-size: 1.25rem; color: var(--gray-600); text-decoration: line-through; margin-bottom: 8px; font-weight: 500; }
+    .offer-terms { font-size: 0.8125rem; color: var(--gray-400); margin-bottom: 6px; }
+    .offer-pay { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--cyan-400); font-weight: 600; margin-bottom: 32px; }
+    .offer-divider { height: 1px; background: rgba(40,38,34,0.06); margin: 0 0 28px; }
+
+    /* OFFER FEATURES AS CARDS — NO LISTS */
+    .feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 32px; }
+    .feat {
+      padding: 14px 16px; border-radius: 12px; font-size: 0.8125rem; line-height: 1.5;
+      border: 1px solid rgba(40,38,34,0.04); background: rgba(40,38,34,0.02);
+      color: var(--gray-300); display: flex; gap: 10px; align-items: flex-start;
+    }
+    .feat strong { color: var(--white); font-weight: 600; }
+    .feat .ck { color: var(--purple-400); font-weight: 800; font-size: 0.9375rem; flex-shrink: 0; }
+    .feat.highlight { border-color: rgba(194,103,78,0.15); background: rgba(194,103,78,0.04); color: var(--gray-200); }
+
+    /* VALUE STACK */
+    .vs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 40px; margin-bottom: 32px; }
+    .vs-item {
+      padding: 18px 20px; border-radius: 14px;
+      border: 1px solid rgba(40,38,34,0.05); background: rgba(40,38,34,0.02);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .vs-label { font-size: 0.8125rem; color: var(--gray-300); line-height: 1.4; }
+    .vs-val { font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; font-weight: 600; color: var(--gray-400); }
+
+    /* TESTIMONIALS */
+    .testi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 56px; }
+    .testi {
+      padding: 36px 32px; border-radius: 20px;
+      border: 1px solid rgba(40,38,34,0.06); background: rgba(40,38,34,0.02);
+      transition: all 0.3s;
+    }
+    .testi:hover { border-color: rgba(194,103,78,0.15); }
+    .testi-result {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.6875rem;
+      padding: 6px 14px; border-radius: 8px; display: inline-block; margin-bottom: 16px;
+      font-weight: 600; letter-spacing: 0.05em;
+    }
+    .testi-quote { font-size: 1rem; color: var(--gray-200); line-height: 1.7; margin-bottom: 24px; }
+    .testi-author { display: flex; align-items: center; gap: 14px; }
+    .testi-av {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple-600), var(--cyan-500));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; font-weight: 800; color: var(--white);
+    }
+    .testi-name { font-size: 0.9375rem; font-weight: 700; color: var(--white); }
+    .testi-role { font-size: 0.75rem; color: var(--gray-500); }
+
+    /* GUARANTEE */
+    .garantie-box {
+      max-width: 750px; margin: 56px auto 0; padding: 56px 48px; border-radius: 24px;
+      border: 2px solid rgba(111,138,95,0.25); background: linear-gradient(135deg, rgba(111,138,95,0.06), rgba(111,138,95,0.02));
+      text-align: center;
+    }
+    .garantie-icon {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: rgba(111,138,95,0.1); border: 2px solid rgba(111,138,95,0.25);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px; font-size: 2rem;
+    }
+
+    /* QUALIFICATION — AS CARDS NOT LISTS */
+    .qual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 56px; }
+    .qual-col { padding: 44px 40px; border-radius: 24px; position: relative; overflow: hidden; }
+    .qual-col::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+    .qual-yes { border: 1px solid rgba(111,138,95,0.15); background: rgba(111,138,95,0.03); }
+    .qual-yes::before { background: linear-gradient(90deg, var(--green-400), rgba(111,138,95,0.2)); }
+    .qual-no { border: 1px solid rgba(198,93,69,0.12); background: rgba(198,93,69,0.02); }
+    .qual-no::before { background: linear-gradient(90deg, var(--red-400), rgba(198,93,69,0.2)); }
+    .qual-title { font-size: 1.25rem; font-weight: 800; margin-bottom: 28px; letter-spacing: -0.02em; display: flex; align-items: center; justify-content: space-between; }
+    .qual-count { font-size: 0.75rem; font-weight: 600; padding: 4px 12px; border-radius: 100px; letter-spacing: 0.05em; }
+    .qual-count-green { background: rgba(111,138,95,0.1); color: var(--green-400); }
+    .qual-count-red { background: rgba(198,93,69,0.08); color: var(--red-400); }
+    .qual-items { display: grid; gap: 14px; }
+    .qual-item {
+      padding: 16px 20px; border-radius: 14px; font-size: 0.9375rem; line-height: 1.6; color: var(--gray-300);
+      display: flex; gap: 14px; align-items: flex-start; text-align: left;
+    }
+    .qual-item-yes { background: rgba(111,138,95,0.04); border: 1px solid rgba(111,138,95,0.08); }
+    .qual-item-no { background: rgba(198,93,69,0.03); border: 1px solid rgba(198,93,69,0.06); }
+    .qual-num {
+      flex-shrink: 0; width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: 700;
+    }
+    .qual-num-green { background: rgba(111,138,95,0.12); color: var(--green-400); }
+    .qual-num-red { background: rgba(198,93,69,0.1); color: var(--red-400); }
+
+    /* FAQ */
+    .faq-list { max-width: 750px; margin: 56px auto 0; display: grid; gap: 12px; }
+    .faq-item {
+      border: 1px solid rgba(40,38,34,0.06); border-radius: 16px;
+      background: rgba(40,38,34,0.02); overflow: hidden; transition: border-color 0.3s;
+    }
+    .faq-item:hover, .faq-item.open { border-color: rgba(194,103,78,0.2); }
+    .faq-q {
+      padding: 22px 28px; display: flex; justify-content: space-between;
+      align-items: center; cursor: pointer; gap: 16px; user-select: none;
+    }
+    .faq-q-text { font-size: 1rem; font-weight: 700; color: var(--white); letter-spacing: -0.01em; line-height: 1.4; }
+    .faq-toggle {
+      flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(194,103,78,0.1); display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; color: var(--purple-400); transition: all 0.3s; font-weight: 300;
+    }
+    .faq-item.open .faq-toggle { transform: rotate(45deg); background: rgba(194,103,78,0.2); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1), padding 0.35s; padding: 0 28px; }
+    .faq-item.open .faq-a { max-height: 500px; padding: 0 28px 24px; }
+    .faq-a p { font-size: 0.9375rem; line-height: 1.7; color: var(--gray-300); }
+
+    /* DIAGNOSTIC TOOL — v2 PREMIUM */
+    .diag-container {
+      max-width: 720px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .diag-card {
+      position: relative;
+      padding: 2px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(194,103,78,0.25), rgba(125,148,130,0.12), rgba(194,103,78,0.2));
+    }
+    .diag-card-inner {
+      border-radius: 26px;
+      padding: 56px 48px;
+      background: linear-gradient(175deg, rgba(235,227,214,0.98), rgba(241,235,223,0.99));
+      position: relative;
+      overflow: hidden;
+      min-height: 420px;
+    }
+    .diag-card-inner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      border-radius: inherit;
+      pointer-events: none;
+    }
+    .diag-card-inner::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 10%; right: 10%; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(194,103,78,0.6), rgba(125,148,130,0.4), transparent);
+    }
+
+    /* Circular progress ring */
+    .diag-ring-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .diag-ring {
+      width: 56px; height: 56px;
+      position: relative;
+    }
+    .diag-ring svg {
+      width: 56px; height: 56px;
+      transform: rotate(-90deg);
+    }
+    .diag-ring-bg {
+      fill: none;
+      stroke: rgba(40,38,34,0.06);
+      stroke-width: 3;
+    }
+    .diag-ring-fill {
+      fill: none;
+      stroke: url(#diagRingGrad);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-dasharray: 163.36;
+      stroke-dashoffset: 163.36;
+      transition: stroke-dashoffset 0.8s cubic-bezier(0.4,0,0.2,1);
+      filter: drop-shadow(0 0 6px rgba(194,103,78,0.4));
+    }
+    .diag-ring-text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--purple-400);
+    }
+    .diag-ring-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.625rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      font-weight: 600;
+    }
+
+    /* Steps — slide transitions */
+    .diag-step-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+    .diag-step {
+      display: none;
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    .diag-step.active {
+      display: block;
+      animation: diagSlideIn 0.5s cubic-bezier(0.16,1,0.3,1) forwards;
+    }
+    .diag-step.exit-left {
+      display: block;
+      animation: diagSlideOutLeft 0.35s cubic-bezier(0.4,0,1,1) forwards;
+    }
+    @keyframes diagSlideIn {
+      from { opacity: 0; transform: translateX(40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes diagSlideOutLeft {
+      from { opacity: 1; transform: translateX(0); }
+      to { opacity: 0; transform: translateX(-40px); }
+    }
+
+    .diag-step-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5625rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--purple-400);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .diag-step-q {
+      font-size: 1.375rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+    }
+
+    /* Options — auto-advance on click */
+    .diag-options { display: grid; gap: 10px; }
+    .diag-opt {
+      position: relative;
+      padding: 18px 22px;
+      border-radius: 16px;
+      border: 1px solid rgba(40,38,34,0.06);
+      background: rgba(40,38,34,0.02);
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .diag-opt:hover {
+      border-color: rgba(194,103,78,0.2);
+      background: rgba(194,103,78,0.04);
+      transform: translateX(4px);
+    }
+    .diag-opt.selected {
+      border-color: rgba(194,103,78,0.5);
+      background: rgba(194,103,78,0.1);
+      box-shadow: 0 4px 24px rgba(194,103,78,0.12);
+    }
+    .diag-opt-radio {
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      border: 2px solid rgba(40,38,34,0.12);
+      margin-top: 1px;
+      transition: all 0.3s;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .diag-opt.selected .diag-opt-radio {
+      border-color: var(--purple-400);
+      background: var(--purple-400);
+      box-shadow: 0 0 12px rgba(194,103,78,0.5);
+    }
+    .diag-opt.selected .diag-opt-radio::after {
+      content: '✓';
+      font-size: 0.625rem;
+      color: var(--white);
+      font-weight: 900;
+    }
+    .diag-opt-text {
+      font-size: 0.9rem;
+      color: var(--gray-300);
+      line-height: 1.5;
+      font-weight: 500;
+    }
+    .diag-opt.selected .diag-opt-text { color: var(--white); }
+
+    /* Input fields */
+    .diag-field { margin-bottom: 20px; }
+    .diag-field label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--gray-400);
+      font-weight: 600;
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+    .diag-field input {
+      width: 100%;
+      padding: 16px 20px;
+      border-radius: 14px;
+      border: 1px solid rgba(40,38,34,0.08);
+      background: rgba(40,38,34,0.03);
+      color: var(--white);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9375rem;
+      outline: none;
+      transition: all 0.3s;
+      box-sizing: border-box;
+    }
+    .diag-field input::placeholder { color: var(--gray-600); }
+    .diag-field input:focus {
+      border-color: rgba(194,103,78,0.4);
+      background: rgba(194,103,78,0.04);
+      box-shadow: 0 0 0 3px rgba(194,103,78,0.1);
+    }
+    .diag-field input.error {
+      border-color: rgba(198,93,69,0.5);
+      box-shadow: 0 0 0 3px rgba(198,93,69,0.08);
+    }
+    .diag-error-msg {
+      font-size: 0.6875rem;
+      color: #c65d45;
+      margin-top: 4px;
+      display: none;
+    }
+    .diag-error-msg.show { display: block; }
+
+    /* Nav buttons */
+    .diag-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 32px;
+      gap: 16px;
+    }
+    .diag-btn {
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s;
+    }
+    .diag-btn--next {
+      background: linear-gradient(180deg, #b85333, #a3492c);
+      color: #fdfaf4;
+      box-shadow: 0 4px 20px rgba(194,103,78,0.3);
+      margin-left: auto;
+    }
+    .diag-btn--next:hover {
+      box-shadow: 0 8px 32px rgba(194,103,78,0.45);
+      transform: translateY(-2px);
+    }
+    .diag-btn--next:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+    .diag-btn--back {
+      background: transparent;
+      color: var(--gray-500);
+      border: 1px solid rgba(40,38,34,0.06);
+    }
+    .diag-btn--back:hover {
+      color: var(--gray-300);
+      border-color: rgba(40,38,34,0.12);
+    }
+
+    /* === RESULTS === */
+    .diag-results-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+    .diag-score-big {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 4rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .diag-score-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.625rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+    }
+    .diag-level-badge {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 6px 18px;
+      border-radius: 100px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .diag-results-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 640px) {
+      .diag-results-grid { grid-template-columns: 1fr; }
+      .diag-card-inner { padding: 36px 24px; }
+    }
+
+    /* Radar chart */
+    .diag-radar {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1;
+      max-width: 260px;
+      margin: 0 auto;
+    }
+
+    /* Score bars */
+    .diag-scores { display: grid; gap: 14px; align-content: center; }
+    .diag-score-row { display: grid; gap: 6px; }
+    .diag-score-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .diag-score-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gray-300);
+    }
+    .diag-score-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6875rem;
+      font-weight: 700;
+    }
+    .diag-score-val.low { color: #c65d45; }
+    .diag-score-val.mid { color: #c08a3c; }
+    .diag-score-val.high { color: #5c7650; }
+    .diag-score-bar-bg {
+      height: 6px;
+      border-radius: 3px;
+      background: rgba(40,38,34,0.06);
+      overflow: hidden;
+    }
+    .diag-score-bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 1.2s cubic-bezier(0.16,1,0.3,1);
+    }
+    .diag-score-bar-fill.low { background: linear-gradient(90deg, #c65d45, #d98a6e); box-shadow: 0 0 8px rgba(198,93,69,0.3); }
+    .diag-score-bar-fill.mid { background: linear-gradient(90deg, #c08a3c, #caa852); box-shadow: 0 0 8px rgba(192,138,60,0.3); }
+    .diag-score-bar-fill.high { background: linear-gradient(90deg, #5c7650, #6f8a5f); box-shadow: 0 0 8px rgba(92,118,80,0.3); }
+
+    /* Tips section */
+    .diag-tips {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 28px;
+      padding: 20px;
+      border-radius: 16px;
+      background: rgba(40,38,34,0.02);
+      border: 1px solid rgba(40,38,34,0.05);
+    }
+    .diag-tips-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5625rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cyan-400);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .diag-tip {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.8125rem;
+      color: var(--gray-300);
+      line-height: 1.5;
+    }
+    .diag-tip-icon {
+      font-size: 0.75rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* Offer recommendation card */
+    .diag-reco {
+      padding: 28px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(194,103,78,0.1), rgba(125,148,130,0.05));
+      border: 1px solid rgba(194,103,78,0.25);
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .diag-reco-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.5625rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--purple-400);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .diag-reco-pack {
+      font-size: 1.75rem;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 4px;
+      letter-spacing: -0.03em;
+    }
+    .diag-reco-price {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.875rem;
+      color: var(--purple-400);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .diag-reco-why {
+      font-size: 0.8125rem;
+      color: var(--gray-400);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .diag-reco-cta {
+      display: inline-block;
+      padding: 16px 36px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, #b85333, #a3492c);
+      color: #fdfaf4;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 6px 24px rgba(194,103,78,0.3);
+    }
+    .diag-reco-cta:hover {
+      box-shadow: 0 10px 40px rgba(194,103,78,0.45);
+      transform: translateY(-2px);
+    }
+
+    /* Opt-in final step */
+    .diag-optin-box {
+      margin-top: 24px;
+      padding: 24px;
+      border-radius: 16px;
+      background: rgba(40,38,34,0.02);
+      border: 1px solid rgba(40,38,34,0.06);
+    }
+    .diag-optin-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .diag-optin-sub {
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      margin-bottom: 16px;
+    }
+
+    /* CTA FINAL */
+    .final-cta {
+      text-align: center; padding: 160px 32px; position: relative; overflow: hidden;
+    }
+    .final-cta::before {
+      content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 200%; height: 100%;
+      background: radial-gradient(ellipse 50% 60% at 50% 80%, rgba(194,103,78,0.1), transparent 60%);
+      pointer-events: none;
+    }
+    .final-content { position: relative; z-index: 1; }
+    .final-steps { max-width: 550px; margin: 48px auto 0; text-align: left; display: grid; gap: 8px; }
+    .final-step {
+      display: flex; gap: 16px; padding: 16px 20px; align-items: center;
+      border-radius: 14px; border: 1px solid rgba(40,38,34,0.04); background: rgba(40,38,34,0.02);
+    }
+    .final-step-num {
+      flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(194,103,78,0.1); border: 1px solid rgba(194,103,78,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; font-weight: 700; color: var(--purple-400);
+    }
+    .final-step-text { font-size: 0.9375rem; color: var(--gray-300); line-height: 1.5; }
+
+    .ps-block {
+      max-width: 650px; margin: 80px auto 0; padding: 36px 40px; border-radius: 16px;
+      border-left: 3px solid var(--purple-500); background: rgba(194,103,78,0.04); text-align: left;
+    }
+    .ps-block p { font-size: 1rem; line-height: 1.7; color: var(--gray-300); }
+
+    /* FOOTER */
+    footer { border-top: 1px solid rgba(40,38,34,0.04); padding: 64px 0 48px; text-align: center; }
+    .footer-links { display: flex; gap: 32px; justify-content: center; margin-top: 28px; flex-wrap: wrap; }
+    .footer-links a { color: var(--gray-500); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gray-300); }
+
+    /* DIVIDER */
+    .divider { position: relative; height: 1px; background: rgba(31,28,24,0.10); max-width: 720px; margin: 0 auto; opacity: 0; transform: scaleX(0); transition: opacity 0.8s ease, transform 1.2s cubic-bezier(0.16,1,0.3,1); }
+    .divider::before { content: ''; position: absolute; left: 50%; top: 50%; width: 7px; height: 7px; background: var(--black); border: 1px solid var(--purple-400); transform: translate(-50%,-50%) rotate(45deg); }
+    .divider.visible { opacity: 1; transform: scaleX(1); }
+
+    /* DIFFERENCE SECTION */
+    .diff-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 48px; }
+    .diff-card { padding: 32px 24px; border-radius: 18px; text-align: center; }
+    .diff-vs { border: 1px solid rgba(198,93,69,0.1); background: rgba(198,93,69,0.02); }
+    .diff-pulse { border: 2px solid rgba(194,103,78,0.25); background: rgba(194,103,78,0.04); }
+    .diff-label {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.625rem;
+      letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 12px; font-weight: 700;
+    }
+
+    /* STICKY CTA MOBILE */
+    .sticky-cta {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+      padding: 16px 24px; background: rgba(246,241,233,0.95); backdrop-filter: blur(20px);
+      border-top: 1px solid rgba(194,103,78,0.2);
+    }
+    .sticky-cta a { display: block; width: 100%; text-align: center; }
+
+    /* ANIMATIONS */
+    /* ================================================ */
+    /* PREMIUM EFFECTS LAYER                            */
+    /* ================================================ */
+
+    /* 1. Scroll progress bar */
+    .scroll-progress {
+      position: fixed;
+      top: 0; left: 0;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(90deg, #9e4d37, #b35a42, #5b6e5a);
+      z-index: 10000;
+      transition: width 0.1s linear;
+      box-shadow: 0 0 8px rgba(158,77,55,0.4), 0 0 16px rgba(91,110,90,0.2);
+    }
+
+    /* 2. Staggered hero entrance */
+    .hero-content > * {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: heroStagger 0.8s cubic-bezier(0.16,1,0.3,1) forwards;
+    }
+    .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+    .hero-content > *:nth-child(2) { animation-delay: 0.25s; }
+    .hero-content > *:nth-child(3) { animation-delay: 0.4s; }
+    .hero-content > *:nth-child(4) { animation-delay: 0.55s; }
+    .hero-content > *:nth-child(5) { animation-delay: 0.7s; }
+    .hero-content > *:nth-child(6) { animation-delay: 0.85s; }
+    @keyframes heroStagger {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 3. Cursor glow ambient */
+    .cursor-glow {
+      position: fixed;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(158,77,55,0.06) 0%, rgba(91,110,90,0.03) 40%, transparent 70%);
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: left 0.3s ease-out, top 0.3s ease-out;
+      will-change: left, top;
+    }
+    @media (max-width: 768px) { .cursor-glow { display: none; } }
+
+    /* 4. Label reveal animation */
+    .label {
+      opacity: 0;
+      transform: translateX(-12px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .label.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* 5. Counter animation (handled by JS) */
+    .count-up {
+      display: inline-block;
+    }
+
+    /* 6. Offer cards 3D tilt */
+    .o-card {
+      transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s ease;
+      transform-style: preserve-3d;
+      perspective: 800px;
+    }
+    .o-card:hover {
+      transform: translateY(-8px) rotateX(2deg) rotateY(-1deg);
+    }
+    .o-card--featured:hover {
+      transform: translateY(-12px) rotateX(2deg) rotateY(-1deg);
+      box-shadow: 0 24px 80px rgba(158,77,55,0.2), 0 0 0 1px rgba(179,90,66,0.15);
+    }
+
+    /* 7. Gradient dividers */
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(158,77,55,0.3), rgba(91,110,90,0.2), transparent);
+      margin: 0;
+      opacity: 0;
+      transform: scaleX(0);
+      transition: opacity 0.8s ease, transform 1.2s cubic-bezier(0.16,1,0.3,1);
+    }
+    .section-divider.visible {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+
+    /* 8. Staggered grid children */
+    .stagger-children > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .stagger-children.visible > *:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.05s; }
+    .stagger-children.visible > *:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.12s; }
+    .stagger-children.visible > *:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.19s; }
+    .stagger-children.visible > *:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.26s; }
+    .stagger-children.visible > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.33s; }
+    .stagger-children.visible > *:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.40s; }
+
+    /* 9. Testimonial cards hover lift */
+    .testi-card {
+      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+    .testi-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+      border-color: rgba(158,77,55,0.2);
+    }
+
+    /* 10. Guarantee box breathing glow */
+    .garantie-box {
+      transition: box-shadow 0.4s ease;
+    }
+    .garantie-box:hover {
+      box-shadow: 0 0 40px rgba(111,138,95,0.08), 0 8px 32px rgba(0,0,0,0.2);
+    }
+
+    /* 11. FAQ items subtle glow when open */
+    .faq-item.open {
+      border-color: rgba(158,77,55,0.15) !important;
+      box-shadow: 0 4px 24px rgba(158,77,55,0.06);
+    }
+
+    /* 12. Nav blur backdrop enhance */
+    nav {
+      backdrop-filter: blur(20px) saturate(1.4) !important;
+      -webkit-backdrop-filter: blur(20px) saturate(1.4) !important;
+    }
+
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1); }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 968px) {
+      .section { padding: 100px 0; }
+      .hero { padding: 160px 24px 80px; }
+      .container, .container-narrow { padding: 0 24px; }
+      .hero-stats, .proof-grid { grid-template-columns: repeat(2, 1fr); }
+      .diff-grid { grid-template-columns: 1fr; }
+      .tf-grid { grid-template-columns: 1fr; gap: 16px; }
+      .tf-arrow { display: none; }
+      .offers-grid, .testi-grid, .qual-grid { grid-template-columns: 1fr !important; }
+      .feat-grid { grid-template-columns: 1fr; }
+      .vs-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .sticky-cta { display: block; }
+    }
+    @media (max-width: 640px) {
+      .hero-stats { gap: 12px; }
+      .hero-stat { padding: 20px 16px; }
+      .hero-stat-val { font-size: 2rem; }
+      h1 span[style*="white-space"] { white-space: normal; }
+      .diag-shortcut { flex-direction: column; text-align: center; padding: 24px 20px; }
+      .diag-shortcut-btn { width: 100%; text-align: center; }
+      .offer-card { padding: 36px 28px; }
+      .offer-price { font-size: 2.75rem; }
+      .garantie-box { padding: 40px 28px; }
+      body { padding-bottom: 80px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Laura<span> Gabriele</span></a>
+    <div class="nav-links">
+      <a href="#methode">Méthode</a>
+      <a href="#offres">Accompagnement</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="btn nav-cta">On en parle →</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Scroll Progress Bar -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Cursor Glow Ambient -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ============================================================ -->
+<!-- 1. HERO — L'accroche fatale                                    -->
+<!-- ============================================================ -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="pre-headline fade-up">Pour les entrepreneurs qui veulent arrêter de tout porter seuls</p>
+
+    <h1 class="fade-up">
+      <span style="white-space: nowrap;">Le <span class="hero-highlight">système opérationnel</span></span><br/>
+      <span style="white-space: nowrap;">des entrepreneurs <span class="serif">qui voient grand</span></span>
+    </h1>
+
+    <p class="hero-sub fade-up">
+      Je structure et je pilote votre opérationnel à votre place :<br/>process, outils, automatisations, délégation, pilotage,<br/><strong style="color: var(--white);">pour que vous vous concentriez enfin sur votre zone de génie.</strong>
+    </p>
+
+    <div class="hero-stats fade-up">
+      <div class="hero-stat">
+        <div class="hero-stat-val gradient-text">Sur-<span style="font-size: 0.5em;">mesure</span></div>
+        <div class="hero-stat-lbl">Adapté à votre activité</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val" style="color: var(--white);">1:1</div>
+        <div class="hero-stat-lbl">Accompagnement dédié</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val" style="color: var(--white);">Clé en main</div>
+        <div class="hero-stat-lbl">On installe et on pilote</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val" style="color: var(--cyan-400);">Sérénité</div>
+        <div class="hero-stat-lbl">Un business qui respire</div>
+      </div>
+    </div>
+
+    <div class="hero-cta-row fade-up">
+      <a href="#contact" class="btn btn-lg">Reprendre la main →</a>
+      <a href="#methode" class="btn btn-ghost btn-lg">Comment je travaille</a>
+    </div>
+
+    <div class="guarantee-micro fade-up">🛡️ Votre opérationnel structuré et documenté à la fin du sprint, ou je continue sans frais</div>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="container">
+    <div class="proof-grid stagger-children">
+      <div><div class="proof-val gradient-text"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[X] ans</mark></div><div class="proof-lbl">D'expérience opérationnelle</div></div>
+      <div><div class="proof-val" style="color: var(--white);"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[X]+</mark></div><div class="proof-lbl">Business structurés</div></div>
+      <div><div class="proof-val" style="color: var(--cyan-400);"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[X]h</mark></div><div class="proof-lbl">Rendues chaque mois</div></div>
+      <div><div class="proof-val" style="color: var(--green-400);">15+</div><div class="proof-lbl">Outils maîtrisés</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- 2. IDENTIFICATION — Le miroir                                  -->
+<!-- ============================================================ -->
+<section class="section" style="background: linear-gradient(180deg, transparent, rgba(198,93,69,0.02), transparent);">
+  <div class="container-narrow" style="text-align: center;">
+    <span class="label">Vous vous reconnaissez ?</span>
+    <h2 class="fade-up">6 symptômes.<br/><span class="serif">Combien vous concernent ?</span></h2>
+    <p class="fade-up" style="max-width: 600px; margin: 0 auto 48px;">Je n'invente rien : ce sont les mêmes phrases qui reviennent à chaque échange.</p>
+
+    <div style="display: grid; gap: 14px; max-width: 720px; margin: 0 auto;" class="fade-up">
+      <div class="pain-card">
+        <p style="color: var(--gray-200); margin: 0;"><strong style="color: var(--purple-400);">« Je fais tout moi-même. »</strong> Admin, facturation, relances, gestion de projet, SAV : tout repose sur vos épaules. Vous êtes en mode pompier permanent.</p>
+      </div>
+      <div class="pain-card">
+        <p style="color: var(--gray-200); margin: 0;"><strong style="color: var(--purple-400);">« Je travaille DANS mon business, jamais SUR. »</strong> Vous courez après les tâches du quotidien et vous ne trouvez jamais le temps de prendre du recul pour construire.</p>
+      </div>
+      <div class="pain-card">
+        <p style="color: var(--gray-200); margin: 0;"><strong style="color: var(--purple-400);">« Aucun process, tout est dans ma tête. »</strong> Rien n'est documenté. Si vous vous arrêtez, tout s'arrête. Impossible de transmettre quoi que ce soit clairement.</p>
+      </div>
+      <div class="pain-card">
+        <p style="color: var(--gray-200); margin: 0;"><strong style="color: var(--purple-400);">« Je suis le goulot d'étranglement. »</strong> Rien n'avance sans vous. Chaque décision, chaque validation passe par vous, et votre business ralentit à votre rythme.</p>
+      </div>
+      <div class="pain-card">
+        <p style="color: var(--gray-200); margin: 0;"><strong style="color: var(--purple-400);">« Mes outils sont un bazar. »</strong> Des infos éparpillées entre mails, notes, fichiers et applis. Vous perdez du temps à chercher, et parfois des informations importantes.</p>
+      </div>
+      <div class="pain-card">
+        <p style="color: var(--gray-200); margin: 0;"><strong style="color: var(--purple-400);">« Impossible de déléguer ou de prendre des vacances. »</strong> Vous aimeriez souffler, mais sans structure ni procédures, déléguer vous coûte plus d'énergie que de tout faire vous-même.</p>
+      </div>
+    </div>
+
+    <p class="fade-up" style="margin-top: 48px; font-size: 1.125rem; color: var(--gray-200); max-width: 600px; margin-left: auto; margin-right: auto;">
+      <strong style="color: var(--white);">Ce n'est pas un manque de travail, c'est un manque de structure.</strong><br/>Le problème, ce n'est pas vous, <span style="color: var(--purple-400);">c'est l'absence de système opérationnel.</span>
+    </p>
+  </div>
+</section>
+
+<!-- DIAGNOSTIC SHORTCUT BANNER -->
+<div class="fade-up" style="
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+">
+  <a href="#diagnostic" class="diag-shortcut" style="
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 28px 36px;
+    background: linear-gradient(135deg, rgba(194,103,78,0.08), rgba(125,148,130,0.06));
+    border: 1px solid rgba(194,103,78,0.2);
+    border-radius: 16px;
+    text-decoration: none;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+  " onmouseover="this.style.borderColor='rgba(194,103,78,0.4)';this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 40px rgba(194,103,78,0.15)';" onmouseout="this.style.borderColor='rgba(194,103,78,0.2)';this.style.transform='translateY(0)';this.style.boxShadow='none';">
+    <div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.625rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(194,103,78,0.7); margin-bottom: 8px;">Diagnostic gratuit · 2 min</div>
+      <div style="font-family: 'Outfit', sans-serif; font-size: 1.125rem; font-weight: 600; color: #fff;">Vous vous reconnaissez ? <span style="color: rgba(194,103,78,0.9);">Mesurez votre score sur les 6 piliers opérationnels.</span></div>
+    </div>
+    <div class="diag-shortcut-btn" style="
+      white-space: nowrap;
+      padding: 12px 28px;
+      background: linear-gradient(180deg, #b85333, #a3492c);
+      color: #fff;
+      border-radius: 12px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.875rem;
+      box-shadow: 0 4px 16px rgba(158,77,55,0.25), 0 2px 8px rgba(91,110,90,0.15);
+    ">Lancer le diagnostic →</div>
+  </a>
+</div>
+
+<!-- ============================================================ -->
+<!-- 3. AGITATION — Le coût de l'inaction                           -->
+<!-- ============================================================ -->
+<section class="section" style="padding-top: 80px;">
+  <div class="container" style="text-align: center;">
+    <span class="label" style="border-color: rgba(198,93,69,0.3); color: var(--red-400); background: rgba(198,93,69,0.06);">Le coût de ne rien changer</span>
+    <h2 class="fade-up">Chaque mois sans système opérationnel,<br/>voilà ce que <span class="serif">vous perdez</span></h2>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px;" class="fade-up">
+      <div class="card" style="border-color: rgba(198,93,69,0.1); text-align: center;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 3.5rem; font-weight: 800; color: var(--red-400); line-height: 1; margin-bottom: 12px;"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[X]h</mark></div>
+        <p style="margin: 0;">Englouties <strong style="color: var(--white);">chaque mois</strong> dans des tâches répétitives et sans valeur, que vous pourriez documenter, automatiser ou déléguer.</p>
+      </div>
+      <div class="card" style="border-color: rgba(198,93,69,0.1); text-align: center;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 3.5rem; font-weight: 800; color: var(--amber-400); line-height: 1; margin-bottom: 12px;">Plafond</div>
+        <p style="margin: 0;">Une croissance <strong style="color: var(--white);">bloquée</strong> : tant que vous êtes le goulot d'étranglement, votre business ne peut pas dépasser votre capacité personnelle.</p>
+      </div>
+      <div class="card" style="border-color: rgba(198,93,69,0.1); text-align: center;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 3.5rem; font-weight: 800; color: var(--gray-400); line-height: 1; margin-bottom: 12px;">Burnout</div>
+        <p style="margin: 0;">Un risque réel <strong style="color: var(--white);">d'épuisement</strong> : surcharge permanente, fatigue qui s'accumule, plaisir d'entreprendre qui s'érode mois après mois.</p>
+      </div>
+    </div>
+
+    <div class="fade-up" style="max-width: 680px; margin: 56px auto 0; padding: 36px 40px; border-radius: 20px; border: 1px solid rgba(198,93,69,0.15); background: rgba(198,93,69,0.03);">
+      <p style="font-size: 1.125rem; color: var(--gray-200); line-height: 1.8; margin: 0;">
+        <strong style="color: var(--red-400);">Le vrai problème sous-jacent :</strong> vous ne manquez ni de talent ni de motivation. Vous manquez d'une <strong style="color: var(--white);">structure opérationnelle</strong> qui fait tourner votre business sans reposer entièrement sur vous. Tant que tout passe par votre tête et vos mains, votre activité <strong style="color: var(--white);">ne peut pas grandir</strong> : elle reste prisonnière de votre temps et de votre énergie.<br/>C'est exactement ce que je viens débloquer.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================ -->
+<!-- 4. CRÉDIBILITÉ — Pourquoi moi                                  -->
+<!-- ============================================================ -->
+<section class="section">
+  <div class="container" style="text-align: center;">
+    <span class="label">Qui je suis</span>
+    <h2 class="fade-up">Je structure et je pilote<br/>votre opérationnel. <span class="serif">À votre place.</span></h2>
+
+    <div class="about-split fade-up">
+      <!-- PHOTO -->
+      <div>
+        <div class="about-photo-wrapper">
+          <div class="about-photo" style="display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(150deg,#e3a98f,#c2674e 45%,#7d9482);color:#fdfaf4;text-align:center;gap:10px;">
+            <div style="font-family:'Outfit',sans-serif;font-weight:900;font-size:5rem;letter-spacing:-0.04em;line-height:1;">LG</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;opacity:0.92;">Photo de Laura · à insérer</div>
+          </div>
+          <div class="about-photo-glow"></div>
+        </div>
+        <div class="about-name">Laura Gabriele · Online Business Manager</div>
+      </div>
+
+      <!-- TEXT -->
+      <div class="about-text">
+        <p>
+          <mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[À PERSONNALISER : parcours de Laura, ses années en gestion de projet et coordination, et ce qui l'a menée à l'OBM.]</mark> Au fil de ces expériences, j'ai compris une chose simple : ce qui fait tourner un business, ce n'est pas l'inspiration du moment, c'est <strong style="color: var(--white);">une structure claire, des process documentés et des outils qui travaillent pour vous.</strong>
+        </p>
+        <p>
+          En accompagnant des entrepreneurs, j'ai vu le même schéma se répéter : des personnes brillantes, débordées, qui s'épuisent non par manque de travail, mais par <strong style="color: var(--purple-400);">absence de structure opérationnelle.</strong>
+        </p>
+        <p>
+          Mon métier, c'est d'installer cette structure et de la piloter à votre place : cartographier ce que vous portez, documenter vos process, connecter vos outils, automatiser ce qui peut l'être et organiser la délégation, pour que votre business avance sans dépendre uniquement de vous.
+        </p>
+        <p style="color: var(--white); font-weight: 600;">
+          En tant qu'OBM, je deviens votre bras droit opérationnel : vous gardez la vision, je fais tourner la machine.
+        </p>
+      </div>
+    </div>
+
+    <p class="fade-up" style="margin-top: 56px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gray-500); text-align: center;">Ma boîte à outils</p>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 24px;" class="fade-up">
+      <div class="card" style="text-align: center;">
+        <div style="font-size: 1.25rem; font-weight: 800; color: var(--white); margin-bottom: 4px; letter-spacing: -0.02em;">Notion</div>
+        <div style="font-size: 0.75rem; color: var(--gray-500); margin-bottom: 8px;">Organisation & documentation</div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; color: var(--purple-400); font-weight: 600;">Maîtrisé</div>
+      </div>
+      <div class="card" style="text-align: center;">
+        <div style="font-size: 1.25rem; font-weight: 800; color: var(--white); margin-bottom: 4px;">ClickUp</div>
+        <div style="font-size: 0.75rem; color: var(--gray-500); margin-bottom: 8px;">Gestion de projet</div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; color: var(--purple-400); font-weight: 600;">Maîtrisé</div>
+      </div>
+      <div class="card" style="text-align: center;">
+        <div style="font-size: 1.25rem; font-weight: 800; color: var(--white); margin-bottom: 4px;">Asana</div>
+        <div style="font-size: 0.75rem; color: var(--gray-500); margin-bottom: 8px;">Gestion de projet</div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; color: var(--purple-400); font-weight: 600;">Maîtrisé</div>
+      </div>
+      <div class="card" style="text-align: center;">
+        <div style="font-size: 1.25rem; font-weight: 800; color: var(--white); margin-bottom: 4px;">Make / Zapier</div>
+        <div style="font-size: 0.75rem; color: var(--gray-500); margin-bottom: 8px;">Automatisation</div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; color: var(--purple-400); font-weight: 600;">Maîtrisé</div>
+      </div>
+      <div class="card" style="text-align: center;">
+        <div style="font-size: 1.25rem; font-weight: 800; color: var(--white); margin-bottom: 4px;">Airtable</div>
+        <div style="font-size: 0.75rem; color: var(--gray-500); margin-bottom: 8px;">Base de données</div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; color: var(--purple-400); font-weight: 600;">Maîtrisé</div>
+      </div>
+      <div class="card" style="text-align: center;">
+        <div style="font-size: 1.25rem; font-weight: 800; color: var(--white); margin-bottom: 4px;">Slack / Google Workspace</div>
+        <div style="font-size: 0.75rem; color: var(--gray-500); margin-bottom: 8px;">Collaboration</div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; color: var(--purple-400); font-weight: 600;">Maîtrisé</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================ -->
+<!-- 5. MÉCANISME UNIQUE · Méthode Laura Gabriele                    -->
+<!-- ============================================================ -->
+<section id="methode" class="section" style="background: radial-gradient(ellipse 80% 50% at 50% 50%, rgba(194,103,78,0.04), transparent 70%);">
+  <div class="container" style="text-align: center;">
+    <span class="label">La Méthode Laura Gabriele</span>
+    <h2 class="fade-up">Pourquoi vous <span class="serif">vous épuisez.</span><br/>Et comment <span class="serif">on change ça.</span></h2>
+    <p class="fade-up" style="max-width: 650px; margin: 0 auto;">
+      Les formations vous donnent des cours, les coachs vous motivent. <strong style="color: var(--white);">Personne ne vous installe ni ne pilote un vrai système opérationnel.</strong> C'est exactement ce que je fais.
+    </p>
+
+    <!-- ICEBERG — PYRAMID VISUALIZATION -->
+    <div class="iceberg-scene fade-up">
+      <div class="iceberg-title">L'iceberg de votre charge</div>
+
+      <div class="iceberg-shape">
+
+        <!-- TIP: 3% above water -->
+        <div class="ice-tier ice-tier--1">
+          <div class="ice-tier-content">
+            <div class="ice-tier-left">
+              <div class="ice-tier-pct">3%</div>
+              <div class="ice-tier-name">Ce que vos clients voient · le livrable</div>
+            </div>
+            <div class="ice-tier-tag" style="background: rgba(198,93,69,0.15); color: #c65d45;">visible</div>
+          </div>
+        </div>
+
+        <!-- WATERLINE -->
+        <div class="ice-waterline">
+          <div class="ice-waterline-line"></div>
+          <div class="ice-waterline-wave"></div>
+          <div class="ice-waterline-label">ligne de flottaison</div>
+        </div>
+
+        <!-- UNDERWATER TIERS -->
+        <div class="ice-underwater">
+
+          <div class="ice-tier ice-tier--2">
+            <div class="ice-tier-content">
+              <div class="ice-tier-left">
+                <div class="ice-tier-pct">7%</div>
+                <div class="ice-tier-name">Admin, facturation, relances</div>
+              </div>
+              <div class="ice-tier-tag" style="background: rgba(194,103,78,0.12); color: var(--purple-400);">porté en solo</div>
+            </div>
+          </div>
+
+          <div class="ice-tier ice-tier--3" style="margin-top: 3px;">
+            <div class="ice-tier-content">
+              <div class="ice-tier-left">
+                <div class="ice-tier-pct">10%</div>
+                <div class="ice-tier-name">Gestion de projet & coordination</div>
+              </div>
+              <div class="ice-tier-tag" style="background: rgba(194,103,78,0.12); color: var(--purple-400);">porté en solo</div>
+            </div>
+          </div>
+
+          <div class="ice-tier ice-tier--4" style="margin-top: 3px;">
+            <div class="ice-tier-content">
+              <div class="ice-tier-left">
+                <div class="ice-tier-pct">20%</div>
+                <div class="ice-tier-name">Outils, process, automatisations</div>
+              </div>
+              <div class="ice-tier-tag" style="background: rgba(194,103,78,0.12); color: var(--purple-400);">porté en solo</div>
+            </div>
+          </div>
+
+          <div class="ice-tier ice-tier--5" style="margin-top: 3px;">
+            <div class="ice-tier-content">
+              <div class="ice-tier-left">
+                <div class="ice-tier-pct">60%</div>
+                <div class="ice-tier-name">Tout le reste : SAV, reporting, imprévus</div>
+              </div>
+              <div class="ice-tier-tag" style="background: rgba(194,103,78,0.12); color: var(--purple-400);">porté en solo</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- + de 90% conclusion -->
+      <div class="ice-conclusion">
+        <div class="ice-conclusion-num">+ de 90%</div>
+        <p>de votre énergie engloutie par l'opérationnel invisible.<br/><strong style="color: var(--white);">C'est exactement ce que je reprends.</strong></p>
+      </div>
+
+    </div>
+
+    <!-- CYCLE — ORBITAL SYSTEM -->
+    <h3 class="fade-up" style="margin-top: 80px;">La boucle de <span class="serif">la Méthode L.G</span></h3>
+    <p class="fade-up" style="max-width: 600px; margin: 0 auto 8px;">
+      Ce n'est pas un tunnel linéaire. C'est une boucle :<br/>on diagnostique <span style="color: var(--purple-400);">→</span> on structure <span style="color: var(--purple-400);">→</span> on outille <span style="color: var(--purple-400);">→</span> on pilote <span style="color: var(--purple-400);">→</span> on délègue <span style="color: var(--purple-400);">→</span> on optimise.<br/>Six étapes, zéro improvisation.
+    </p>
+
+    <!-- DESKTOP: Orbital circle -->
+    <div class="orbit-wrapper fade-up">
+      <div class="orbit-container">
+
+        <!-- SVG Ring + particle -->
+        <svg class="orbit-svg" viewBox="0 0 820 820">
+          <defs>
+            <linearGradient id="orbitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#c2674e" />
+              <stop offset="50%" stop-color="#7d9482" />
+              <stop offset="100%" stop-color="#c2674e" />
+            </linearGradient>
+            <filter id="particleGlow">
+              <feGaussianBlur stdDeviation="3" result="blur" />
+              <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
+          </defs>
+          <circle cx="410" cy="410" r="250" class="orbit-ring-bg" />
+          <circle cx="410" cy="410" r="250" class="orbit-ring-dash" />
+          <circle cx="410" cy="410" r="250" class="orbit-ring-glow" />
+          <circle r="5" filter="url(#particleGlow)" class="orbit-particle">
+            <animateMotion dur="8s" repeatCount="indefinite">
+              <mpath href="#orbitPath" />
+            </animateMotion>
+          </circle>
+          <path id="orbitPath" d="M 410 160 A 250 250 0 1 1 409.99 160" fill="none" />
+          <circle cx="410" cy="410" r="250" class="orbit-particle-trail">
+            <animate attributeName="stroke-dashoffset" from="0" to="-1571" dur="8s" repeatCount="indefinite" />
+          </circle>
+        </svg>
+
+        <!-- Center hub -->
+        <div class="orbit-hub">
+          <div class="orbit-hub-content">
+            <div class="orbit-hub-label">Système opérationnel</div>
+            <div class="orbit-hub-name">Méthode L.G</div>
+            <div class="orbit-hub-sub">Boucle infinie</div>
+          </div>
+        </div>
+
+        <!-- 6 Orbital nodes — positioned by CSS percentages -->
+        <div class="orbit-node">
+          <div class="orbit-node-inner">
+            <div class="orbit-node-num">ÉTAPE 01</div>
+            <div class="orbit-node-icon">🔍</div>
+            <div class="orbit-node-title">Diagnostic</div>
+            <div class="orbit-node-desc">Audit complet de votre opérationnel : tâches, outils, process, points de friction. On cartographie tout ce que vous portez.</div>
+          </div>
+        </div>
+
+        <div class="orbit-node">
+          <div class="orbit-node-inner">
+            <div class="orbit-node-num">ÉTAPE 02</div>
+            <div class="orbit-node-icon">🧱</div>
+            <div class="orbit-node-title">Structuration</div>
+            <div class="orbit-node-desc">On conçoit vos systèmes et process : procédures documentées (SOP), organisation Notion, flux de travail clairs.</div>
+          </div>
+        </div>
+
+        <div class="orbit-node">
+          <div class="orbit-node-inner">
+            <div class="orbit-node-num">ÉTAPE 03</div>
+            <div class="orbit-node-icon">⚙️</div>
+            <div class="orbit-node-title">Outils & automatisations</div>
+            <div class="orbit-node-desc">On choisit et connecte les bons outils, on automatise les tâches répétitives (Make / Zapier) pour vous faire gagner des heures.</div>
+          </div>
+        </div>
+
+        <div class="orbit-node">
+          <div class="orbit-node-inner">
+            <div class="orbit-node-num">ÉTAPE 04</div>
+            <div class="orbit-node-icon">📊</div>
+            <div class="orbit-node-title">Pilotage</div>
+            <div class="orbit-node-desc">Gestion de projet, suivi des priorités, tableau de bord KPIs. Vous voyez enfin où en est votre business en un coup d'œil.</div>
+          </div>
+        </div>
+
+        <div class="orbit-node">
+          <div class="orbit-node-inner">
+            <div class="orbit-node-num">ÉTAPE 05</div>
+            <div class="orbit-node-icon">🤝</div>
+            <div class="orbit-node-title">Équipe & délégation</div>
+            <div class="orbit-node-desc">On structure la délégation : qui fait quoi, comment, avec quels process. Votre équipe (ou vos prestataires) avance sans vous attendre.</div>
+          </div>
+        </div>
+
+        <div class="orbit-node">
+          <div class="orbit-node-inner">
+            <div class="orbit-node-num">ÉTAPE 06</div>
+            <div class="orbit-node-icon">🔄</div>
+            <div class="orbit-node-title">Optimisation continue</div>
+            <div class="orbit-node-desc">On mesure, on ajuste, on améliore. La machine tourne et se perfectionne, vous restez concentré sur votre zone de génie.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MOBILE: Vertical timeline -->
+    <div class="orbit-mobile">
+      <div class="orbit-m-step">
+        <div class="orbit-m-num">ÉTAPE 01</div>
+        <div class="orbit-m-title">🔍 Diagnostic</div>
+        <div class="orbit-m-desc">Audit complet de votre opérationnel : tâches, outils, process, points de friction. On cartographie tout ce que vous portez.</div>
+      </div>
+      <div class="orbit-m-step">
+        <div class="orbit-m-num">ÉTAPE 02</div>
+        <div class="orbit-m-title">🧱 Structuration</div>
+        <div class="orbit-m-desc">On conçoit vos systèmes et process : procédures documentées (SOP), organisation Notion, flux de travail clairs.</div>
+      </div>
+      <div class="orbit-m-step">
+        <div class="orbit-m-num">ÉTAPE 03</div>
+        <div class="orbit-m-title">⚙️ Outils & automatisations</div>
+        <div class="orbit-m-desc">On choisit et connecte les bons outils, on automatise les tâches répétitives (Make / Zapier) pour vous faire gagner des heures.</div>
+      </div>
+      <div class="orbit-m-step">
+        <div class="orbit-m-num">ÉTAPE 04</div>
+        <div class="orbit-m-title">📊 Pilotage</div>
+        <div class="orbit-m-desc">Gestion de projet, suivi des priorités, tableau de bord KPIs. Vous voyez enfin où en est votre business en un coup d'œil.</div>
+      </div>
+      <div class="orbit-m-step">
+        <div class="orbit-m-num">ÉTAPE 05</div>
+        <div class="orbit-m-title">🤝 Équipe & délégation</div>
+        <div class="orbit-m-desc">On structure la délégation : qui fait quoi, comment, avec quels process. Votre équipe (ou vos prestataires) avance sans vous attendre.</div>
+      </div>
+      <div class="orbit-m-step">
+        <div class="orbit-m-num">ÉTAPE 06</div>
+        <div class="orbit-m-title">🔄 Optimisation continue</div>
+        <div class="orbit-m-desc">On mesure, on ajuste, on améliore. La machine tourne et se perfectionne, vous restez concentré sur votre zone de génie.</div>
+      </div>
+      <div class="orbit-loop-back">↻ La boucle se referme · Étape 06 alimente Étape 01</div>
+    </div>
+
+    <!-- DIFFÉRENCIATION -->
+    <h3 class="fade-up" style="margin-top: 80px;">Pourquoi cette approche et pas <span class="serif">le reste ?</span></h3>
+    <div class="diff-grid fade-up">
+      <div class="diff-card diff-vs">
+        <div class="diff-label" style="color: var(--red-400);">Formations en ligne</div>
+        <p style="margin: 0; font-size: 0.875rem;">Vous regardez des vidéos et vous devez tout implémenter seul. Le savoir est là, mais votre opérationnel, lui, ne change pas.</p>
+      </div>
+      <div class="diff-card diff-vs">
+        <div class="diff-label" style="color: var(--red-400);">Assistant·e / freelance ponctuel</div>
+        <p style="margin: 0; font-size: 0.875rem;">Il exécute des tâches que vous lui confiez, mais ne structure pas et ne pilote pas la vision globale de votre organisation.</p>
+      </div>
+      <div class="diff-card diff-pulse">
+        <div class="diff-label" style="color: var(--purple-400);">La Méthode Laura Gabriele</div>
+        <p style="margin: 0; font-size: 0.875rem; color: var(--gray-200);">On installe ET on pilote tout votre système opérationnel ensemble. Vous repartez avec <strong style="color: var(--white);">une organisation qui tourne</strong>, et un pilotage qui la fait durer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================ -->
+<!-- 6. TRANSFORMATION — Avant / Après                              -->
+<!-- ============================================================ -->
+<section class="section">
+  <div class="container" style="text-align: center;">
+    <span class="label">Transformation</span>
+    <h2 class="fade-up">Ce que la structure<br/><span class="serif">change vraiment</span></h2>
+
+    <div class="tf-grid fade-up">
+      <div class="tf-col">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.625rem; color: var(--red-400); font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; text-align: center;">AUJOURD'HUI</div>
+        <div class="tf-item tf-before">🤯 Tout repose sur vous, vous êtes le goulot</div>
+        <div class="tf-item tf-before">⏰ Épuisé : 55-65h/semaine</div>
+        <div class="tf-item tf-before">🗂️ Infos éparpillées, vous cherchez sans cesse</div>
+        <div class="tf-item tf-before">🚫 Aucune délégation possible</div>
+        <div class="tf-item tf-before">🏖️ Jamais de vraies vacances</div>
+        <div class="tf-item tf-before">🔥 Vous éteignez des feux en permanence</div>
+      </div>
+      <div class="tf-arrow">→</div>
+      <div class="tf-col">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.625rem; color: var(--green-400); font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; text-align: center;">APRÈS LE SPRINT</div>
+        <div class="tf-item tf-after">✅ Une organisation qui tient sans vous</div>
+        <div class="tf-item tf-after">✅ Process documentés et réutilisables</div>
+        <div class="tf-item tf-after">✅ Outils connectés, infos centralisées</div>
+        <div class="tf-item tf-after">✅ Une délégation qui tourne</div>
+        <div class="tf-item tf-after">✅ Vous travaillez SUR le business, pas dedans</div>
+        <div class="tf-item tf-after">✅ De la sérénité retrouvée au quotidien</div>
+      </div>
+    </div>
+
+    <div class="fade-up" style="margin-top: 56px; max-width: 620px; margin-left: auto; margin-right: auto;">
+      <p style="font-size: 1.25rem; line-height: 1.8;">
+        <span class="serif" style="font-size: 1.5rem; color: var(--white);">Imaginez dans quelques semaines.</span><br/>
+        Lundi matin, votre tableau de bord vous dit tout en un coup d'œil,<br/>votre équipe sait exactement quoi faire, vos process tournent sans vous.<br/>
+        Vous ouvrez votre agenda, et il est enfin respirable.<br/>
+        <strong style="color: var(--white);">C'est ça, avoir un système opérationnel.</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================ -->
+<!-- 7. L'OFFRE — PREMIUM REDESIGN                                  -->
+<!-- ============================================================ -->
+
+<style>
+  /* ===== PREMIUM OFFERS SECTION ===== */
+  .offers-section {
+    padding: 160px 0 140px;
+    position: relative;
+    overflow: hidden;
+  }
+  .offers-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: 
+      radial-gradient(ellipse 60% 50% at 30% 20%, rgba(194,103,78,0.06), transparent 60%),
+      radial-gradient(ellipse 50% 40% at 70% 80%, rgba(125,148,130,0.04), transparent 50%);
+    pointer-events: none;
+  }
+
+  .offers-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.18fr 1fr;
+    gap: 24px;
+    margin-top: 72px;
+    align-items: start;
+    position: relative;
+  }
+
+  /* === BASE CARD === */
+  .o-card {
+    position: relative;
+    border-radius: 28px;
+    padding: 2px;
+    transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), box-shadow 0.5s cubic-bezier(0.4,0,0.2,1);
+  }
+  .o-card:hover {
+    transform: translateY(-8px);
+  }
+
+  .o-card-inner {
+    border-radius: 26px;
+    padding: 44px 36px;
+    background: linear-gradient(175deg, rgba(235,227,214,0.95), rgba(241,235,223,0.98));
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Grain texture overlay */
+  .o-card-inner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    border-radius: 26px;
+  }
+
+  /* === STARTER CARD === */
+  .o-card--starter {
+    background: linear-gradient(135deg, rgba(40,38,34,0.08), rgba(40,38,34,0.03));
+  }
+  .o-card--starter:hover {
+    box-shadow: 0 24px 56px rgba(0,0,0,0.4), 0 0 0 1px rgba(40,38,34,0.06);
+  }
+
+  /* === FEATURED CARD (SPRINT) === */
+  .o-card--featured {
+    background: linear-gradient(135deg, var(--purple-500), var(--cyan-500), var(--purple-500));
+    background-size: 200% 200%;
+    animation: borderShimmer 6s ease-in-out infinite;
+    z-index: 2;
+  }
+  @keyframes borderShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  .o-card--featured:hover {
+    box-shadow: 
+      0 32px 72px rgba(194,103,78,0.25),
+      0 0 120px rgba(194,103,78,0.08),
+      0 0 0 1px rgba(194,103,78,0.3);
+    transform: translateY(-12px);
+  }
+  .o-card--featured .o-card-inner {
+    background: linear-gradient(175deg, rgba(237,229,216,0.97), rgba(239,231,218,0.99));
+  }
+
+  /* Subtle glow at top of featured card */
+  .o-card--featured .o-card-inner::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 10%; right: 10%; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(194,103,78,0.6), rgba(125,148,130,0.4), transparent);
+  }
+
+  /* === PILOTAGE CARD === */
+  .o-card--entreprise {
+    background: linear-gradient(135deg, rgba(92,118,80,0.10), rgba(92,118,80,0.04), rgba(40,38,34,0.02));
+  }
+  .o-card--entreprise:hover {
+    box-shadow: 0 24px 56px rgba(0,0,0,0.4), 0 0 0 1px rgba(92,118,80,0.18);
+  }
+  .o-card--entreprise .o-card-inner {
+    border: 1px solid rgba(92,118,80,0.10);
+  }
+  .o-card--entreprise .o-name {
+    background: linear-gradient(135deg, #5c7650, #6f8a5f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .o-card--entreprise .o-feat-check {
+    background: rgba(92,118,80,0.12) !important;
+    color: #5c7650 !important;
+    border: 1px solid rgba(92,118,80,0.2) !important;
+  }
+  .o-card--entreprise .o-feat:hover {
+    background: rgba(92,118,80,0.04);
+  }
+  .o-card--entreprise .o-feat-text { color: var(--gray-300); }
+  .o-card--entreprise .o-card-inner::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 10%; right: 10%; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(92,118,80,0.4), rgba(111,138,95,0.25), transparent);
+  }
+
+  /* === BADGE === */
+  .o-badge {
+    position: absolute;
+    top: -1px; left: 36px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.5625rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fdfaf4;
+    padding: 8px 20px 10px;
+    background: linear-gradient(135deg, var(--purple-600), var(--purple-500));
+    border-radius: 0 0 12px 12px;
+    z-index: 3;
+    box-shadow: 0 4px 16px rgba(194,103,78,0.3);
+  }
+
+  /* === CARD HEADER === */
+  .o-header { margin-bottom: 28px; position: relative; z-index: 1; }
+  .o-tier {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.625rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .o-name {
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .o-tagline {
+    font-size: 0.8125rem;
+    color: var(--gray-500);
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  /* === PRICING === */
+  .o-pricing { margin-bottom: 28px; position: relative; z-index: 1; }
+  .o-old-price {
+    font-size: 1rem;
+    color: var(--gray-600);
+    text-decoration: line-through;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .o-price {
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .o-card--featured .o-price {
+    font-size: 4rem;
+  }
+  .o-duration {
+    font-size: 0.8125rem;
+    color: var(--gray-400);
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .o-installment {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 8px;
+  }
+
+  /* === SEPARATOR === */
+  .o-sep {
+    height: 1px;
+    margin: 0 0 28px;
+    position: relative; z-index: 1;
+  }
+
+  /* === FEATURES (no lists) === */
+  .o-features {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 28px;
+    position: relative; z-index: 1;
+    flex: 1;
+  }
+  .o-feat {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: var(--gray-400);
+    transition: all 0.25s;
+  }
+  .o-feat:hover {
+    background: rgba(40,38,34,0.03);
+  }
+  .o-feat-check {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.625rem;
+    font-weight: 800;
+    margin-top: 1px;
+  }
+  .o-feat-check--default {
+    background: rgba(194,103,78,0.1);
+    color: var(--purple-400);
+    border: 1px solid rgba(194,103,78,0.15);
+  }
+  .o-feat-check--cyan {
+    background: rgba(125,148,130,0.1);
+    color: var(--cyan-400);
+    border: 1px solid rgba(125,148,130,0.15);
+  }
+  .o-feat-check--green {
+    background: rgba(111,138,95,0.1);
+    color: var(--green-400);
+    border: 1px solid rgba(111,138,95,0.15);
+  }
+  .o-feat-text { color: var(--gray-300); }
+  .o-feat-text strong { color: var(--white); font-weight: 600; }
+  .o-card--featured .o-feat-text { color: var(--gray-200); }
+  .o-card--featured .o-feat { background: rgba(40,38,34,0.02); }
+  .o-card--featured .o-feat:hover { background: rgba(40,38,34,0.05); }
+
+  /* === SPECIAL BLOCKS === */
+  .o-passerelle {
+    padding: 14px 18px;
+    border-radius: 12px;
+    background: rgba(125,148,130,0.04);
+    border: 1px solid rgba(125,148,130,0.12);
+    font-size: 0.75rem;
+    color: var(--cyan-400);
+    font-weight: 600;
+    margin-bottom: 24px;
+    line-height: 1.5;
+    text-align: center;
+    position: relative; z-index: 1;
+  }
+  .o-guarantee {
+    padding: 16px 20px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(111,138,95,0.06), rgba(111,138,95,0.02));
+    border: 1px solid rgba(111,138,95,0.18);
+    margin-bottom: 24px;
+    text-align: center;
+    position: relative; z-index: 1;
+  }
+  .o-guarantee p { font-size: 0.8125rem; color: var(--green-400); font-weight: 700; margin: 0; }
+
+  .o-partner {
+    padding: 20px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(92,118,80,0.08), rgba(92,118,80,0.04));
+    border: 1px solid rgba(92,118,80,0.18);
+    margin-bottom: 24px;
+    text-align: center;
+    position: relative; z-index: 1;
+  }
+  .o-partner-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.5625rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #5c7650;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .o-partner-name {
+    font-size: 1.375rem;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: -0.03em;
+  }
+  .o-partner-name span {
+    font-weight: 500;
+    color: #6f8a5f;
+    font-size: 0.9375rem;
+    margin-left: 4px;
+  }
+  .o-partner-desc {
+    font-size: 0.75rem;
+    color: var(--gray-400);
+    line-height: 1.5;
+    margin-top: 6px;
+  }
+
+  /* === CTA BUTTONS === */
+  .o-cta {
+    position: relative; z-index: 1;
+    display: block;
+    width: 100%;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    border-radius: 14px;
+    transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+    cursor: pointer;
+    border: none;
+  }
+  .o-cta--ghost {
+    background: rgba(40,38,34,0.04);
+    color: var(--gray-300);
+    border: 1px solid rgba(40,38,34,0.1);
+  }
+  .o-cta--ghost:hover {
+    background: rgba(40,38,34,0.08);
+    border-color: rgba(40,38,34,0.2);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .o-cta--primary {
+    background: linear-gradient(180deg, #b85333, #a3492c);
+    color: #fdfaf4;
+    box-shadow: 0 8px 28px rgba(194,103,78,0.3), inset 0 1px 0 rgba(40,38,34,0.1);
+  }
+  .o-cta--primary:hover {
+    box-shadow: 0 12px 40px rgba(194,103,78,0.45), inset 0 1px 0 rgba(40,38,34,0.15);
+    transform: translateY(-2px);
+  }
+  .o-cta--outline {
+    background: linear-gradient(135deg, rgba(92,118,80,0.08), rgba(92,118,80,0.04));
+    color: #5c7650;
+    border: 1px solid rgba(92,118,80,0.3);
+  }
+  .o-cta--outline:hover {
+    background: linear-gradient(135deg, #5c7650, #5c7650);
+    border-color: #5c7650;
+    color: #fdfaf4;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(92,118,80,0.3);
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 1080px) {
+    .offers-wrapper { grid-template-columns: 1fr !important; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .o-card--featured { order: -1; }
+    .o-card--featured .o-price { font-size: 3.5rem; }
+  }
+  @media (max-width: 640px) {
+    .o-card-inner { padding: 36px 28px; }
+    .o-price { font-size: 2.75rem !important; }
+  }
+</style>
+
+<section id="offres" class="offers-section">
+  <div class="container" style="text-align: center; position: relative; z-index: 1;">
+    <span class="label">Les offres</span>
+    <h2 class="fade-up">Deux façons de travailler ensemble.<br/>Du diagnostic au <span class="serif">pilotage.</span></h2>
+    <p class="fade-up" style="max-width: 580px; margin: 0 auto; font-size: 1.0625rem;">
+      Que vous vouliez d'abord y voir clair, structurer tout votre opérationnel d'un coup, ou être accompagné dans la durée.
+    </p>
+
+    <div class="offers-wrapper fade-up">
+
+      <!-- ===== STARTER ===== -->
+      <div class="o-card o-card--starter">
+        <div class="o-card-inner">
+          <div class="o-header">
+            <div class="o-name">AUDIT</div>
+            <div class="o-tagline">Votre feuille de route opérationnelle</div>
+          </div>
+
+          <div class="o-pricing">
+            <div class="o-price gradient-text"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[PRIX À DÉFINIR]</mark></div>
+            <div class="o-duration">Diagnostic complet · Entrepreneurs débordés</div>
+            <div class="o-installment" style="background: rgba(194,103,78,0.08); color: var(--purple-400);"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[modalités à définir]</mark></div>
+          </div>
+
+          <div class="o-sep" style="background: linear-gradient(90deg, transparent, rgba(40,38,34,0.08), transparent);"></div>
+
+          <div class="o-features">
+            <div class="o-feat">
+              <div class="o-feat-check o-feat-check--default">✓</div>
+              <div class="o-feat-text">Audit complet de votre opérationnel : tâches, charge, organisation</div>
+            </div>
+            <div class="o-feat">
+              <div class="o-feat-check o-feat-check--default">✓</div>
+              <div class="o-feat-text">Cartographie de vos process et de vos outils existants</div>
+            </div>
+            <div class="o-feat">
+              <div class="o-feat-check o-feat-check--default">✓</div>
+              <div class="o-feat-text">Identification des points de friction et des goulots d'étranglement</div>
+            </div>
+            <div class="o-feat">
+              <div class="o-feat-check o-feat-check--default">✓</div>
+              <div class="o-feat-text">Plan d'action priorisé : par où commencer, dans quel ordre</div>
+            </div>
+            <div class="o-feat">
+              <div class="o-feat-check o-feat-check--default">✓</div>
+              <div class="o-feat-text">Recommandations d'outils et d'automatisations adaptées</div>
+            </div>
+            <div class="o-feat">
+              <div class="o-feat-check o-feat-check--default">✓</div>
+              <div class="o-feat-text"><strong>1 call de restitution</strong> pour vous présenter le diagnostic</div>
+            </div>
+          </div>
+
+          <div class="o-passerelle">🔄 Le montant de l'audit est déduit si vous poursuivez avec le Sprint Structuration.</div>
+
+          <a href="#contact" class="o-cta o-cta--ghost">Démarrer par l'audit →</a>
+        </div>
+      </div>
+
+      <!-- ===== SPRINT STRUCTURATION (FEATURED) ===== -->
+      <div class="o-card o-card--featured">
+        <div class="o-badge">⭐ Recommandé</div>
+        <div class="o-card-inner">
+          <div class="o-header">
+            <div class="o-name" style="font-size: 2rem;">SPRINT STRUCTURATION</div>
+            <div class="o-tagline" style="color: var(--gray-400);">Tout votre opérationnel structuré, clé en main</div>
+          </div>
+
+          <div class="o-pricing">
+            <div class="o-price">
+              <span class="gradient-text"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[PRIX À DÉFINIR]</mark></span>
+            </div>
+            <div class="o-duration" style="color: var(--gray-300);">Un sprint complet · Entrepreneurs en croissance</div>
+            <div class="o-installment" style="background: rgba(125,148,130,0.08); color: var(--cyan-400);"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[modalités à définir]</mark></div>
+          </div>
+
+          <div class="o-sep" style="background: linear-gradient(90deg, transparent, rgba(194,103,78,0.25), rgba(125,148,130,0.15), transparent);"></div>
+
+          <div class="o-features">
+            <div class="o-feat">
+              <div class="o-feat-check o-feat-check--green">✓</div>
+              <div class="o-feat-text"><strong>Tout l'audit inclus</strong> : diagnostic, cartographie et plan d'action</div>
+            </div>
+            <div class="o-feat">
+              <div class="o-feat-check o-feat-check--default">✓</div>
+              <div class="o-feat-text">Refonte et centralisation Notion : un seul endroit pour tout piloter</div>
+            </div>
+            <div class="o-feat">
+              <div class="o-feat-check o-feat-check--default">✓</div>
+              <div class="o-feat-text">Procédures documentées (SOP) : vos process clairs et transmissibles</div>
+            </div>
+            <div class="o-feat">
+              <div class="o-feat-check o-feat-check--default">✓</div>
+              <div class="o-feat-text">Mise en place et connexion de vos outils : tout communique enfin</div>
+            </div>
+            <div class="o-feat">
+              <div class="o-feat-check o-feat-check--cyan">✓</div>
+              <div class="o-feat-text">Automatisations Make / Zapier : les tâches répétitives en pilote automatique</div>
+            </div>
+            <div class="o-feat">
+              <div class="o-feat-check o-feat-check--default">✓</div>
+              <div class="o-feat-text">Tableau de bord KPIs : votre business lisible en un coup d'œil</div>
+            </div>
+            <div class="o-feat">
+              <div class="o-feat-check o-feat-check--default">✓</div>
+              <div class="o-feat-text">Structuration de la délégation : qui fait quoi, comment, avec quels process</div>
+            </div>
+            <div class="o-feat">
+              <div class="o-feat-check o-feat-check--default">✓</div>
+              <div class="o-feat-text"><strong>Calls 1:1 hebdomadaires</strong> de pilotage pendant tout le sprint</div>
+            </div>
+            <div class="o-feat">
+              <div class="o-feat-check o-feat-check--default">✓</div>
+              <div class="o-feat-text">Support dédié pendant toute la durée du sprint</div>
+            </div>
+          </div>
+
+          <div class="o-guarantee">
+            <p>🛡️ Votre opérationnel structuré et documenté à la fin du sprint, ou je continue sans frais</p>
+          </div>
+
+          <a href="#contact" class="o-cta o-cta--primary">Lancer mon Sprint →</a>
+        </div>
+      </div>
+
+      <!-- ===== ENTREPRISE ===== -->
+      <div class="o-card o-card--entreprise">
+        <div class="o-card-inner">
+          <div class="o-header">
+            <div class="o-name">PILOTAGE CONTINU</div>
+            <div class="o-tagline">Votre bras droit opérationnel, chaque mois</div>
+          </div>
+
+          <div class="o-pricing">
+            <div class="o-price" style="font-size: 2.5rem; background: linear-gradient(135deg, #5c7650, #6f8a5f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[PRIX/MOIS À DÉFINIR]</mark></div>
+            <div class="o-duration">Accompagnement récurrent · Au mois</div>
+            <div class="o-installment" style="background: rgba(92,118,80,0.08); color: #5c7650;">📞 Échange découverte gratuit</div>
+          </div>
+
+          <div class="o-sep" style="background: linear-gradient(90deg, transparent, rgba(92,118,80,0.2), transparent);"></div>
+
+          <div class="o-features">
+            <div class="o-feat">
+              <div class="o-feat-check o-feat-check--default">✓</div>
+              <div class="o-feat-text">Gestion de projet en continu : vos priorités suivies et tenues</div>
+            </div>
+            <div class="o-feat">
+              <div class="o-feat-check o-feat-check--default">✓</div>
+              <div class="o-feat-text">Suivi des KPIs et reporting mensuel clair et synthétique</div>
+            </div>
+            <div class="o-feat">
+              <div class="o-feat-check o-feat-check--default">✓</div>
+              <div class="o-feat-text">Coordination de votre équipe et de vos prestataires</div>
+            </div>
+            <div class="o-feat">
+              <div class="o-feat-check o-feat-check--default">✓</div>
+              <div class="o-feat-text">Amélioration continue de vos process et automatisations</div>
+            </div>
+            <div class="o-feat">
+              <div class="o-feat-check o-feat-check--default">✓</div>
+              <div class="o-feat-text">Point de pilotage régulier pour garder le cap</div>
+            </div>
+            <div class="o-feat">
+              <div class="o-feat-check o-feat-check--default">✓</div>
+              <div class="o-feat-text">Disponibilité dédiée tout au long de l'accompagnement</div>
+            </div>
+          </div>
+
+          <div class="o-partner">
+            <div class="o-partner-label">Engagement</div>
+            <div class="o-partner-name">Au mois<span> · sans engagement long</span></div>
+            <div class="o-partner-desc">Un accompagnement souple qui s'arrête quand votre organisation tourne seule.</div>
+          </div>
+
+          <a href="#contact" class="o-cta o-cta--outline">Discuter du pilotage →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- VALUE STACK — PREMIUM -->
+    <div class="fade-up" style="max-width: 920px; margin: 72px auto 0; padding: 2px; border-radius: 26px; background: linear-gradient(135deg, rgba(194,103,78,0.2), rgba(125,148,130,0.1), rgba(194,103,78,0.15));">
+      <div style="border-radius: 24px; padding: 48px 44px; background: linear-gradient(175deg, rgba(235,227,214,0.97), rgba(241,235,223,0.99));">
+        <h4 style="text-align: center; margin-bottom: 36px; font-size: 1.25rem;">Ce que contient le <span class="serif">Sprint Structuration</span></h4>
+
+        <div class="vs-grid">
+          <div class="vs-item"><div class="vs-label">Audit opérationnel complet</div><div class="vs-val">[valeur]</div></div>
+          <div class="vs-item"><div class="vs-label">Refonte & centralisation Notion</div><div class="vs-val">[valeur]</div></div>
+          <div class="vs-item"><div class="vs-label">Procédures documentées (SOP)</div><div class="vs-val">[valeur]</div></div>
+          <div class="vs-item"><div class="vs-label">Mise en place des outils</div><div class="vs-val">[valeur]</div></div>
+          <div class="vs-item"><div class="vs-label">Pack automatisations (Make / Zapier)</div><div class="vs-val">[valeur]</div></div>
+          <div class="vs-item"><div class="vs-label">Tableau de bord KPIs</div><div class="vs-val">[valeur]</div></div>
+          <div class="vs-item"><div class="vs-label">Structuration de la délégation</div><div class="vs-val">[valeur]</div></div>
+          <div class="vs-item"><div class="vs-label">Calls 1:1 de pilotage</div><div class="vs-val">[valeur]</div></div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 24px 0 0; margin-top: 20px; border-top: 2px solid rgba(194,103,78,0.25);">
+          <div style="font-size: 1.125rem; font-weight: 700; color: var(--white);">Valeur totale</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; font-weight: 800; color: var(--purple-400);"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[À DÉFINIR]</mark></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 0 0;">
+          <div style="font-size: 1.375rem; font-weight: 800; color: var(--white);">Vous payez</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 2.25rem; font-weight: 900;" class="gradient-text"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[À DÉFINIR]</mark></div>
+        </div>
+        <p style="text-align: center; margin-top: 16px; font-size: 0.8125rem; color: var(--gray-500);"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[modalités de paiement à préciser]</mark></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================ -->
+<!-- 8. PREUVE SOCIALE — Témoignages                                -->
+<!-- ============================================================ -->
+<section class="section">
+  <div class="container" style="text-align: center;">
+    <span class="label">Résultats</span>
+    <h2 class="fade-up">Ce que disent ceux<br/>qui ont <span class="serif">fait le pas</span></h2>
+
+    <div class="testi-grid fade-up stagger-children">
+      <div class="testi">
+        <div class="testi-result" style="background: rgba(111,138,95,0.1); color: var(--green-400);">12h rendues par semaine</div>
+        <div class="testi-quote">
+          <mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[TÉMOIGNAGE À REMPLACER]</mark> « Je passais mes soirées à rattraper l'admin et les relances. Après le sprint, tout est documenté et la moitié tourne en automatique. Laura m'a rendu une douzaine d'heures par semaine, et surtout ma tête est enfin libre. »
+        </div>
+        <div class="testi-author">
+          <div class="testi-av">S</div>
+          <div><div class="testi-name">Sophie M.</div><div class="testi-role">Coach · Lyon</div></div>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="testi-result" style="background: rgba(125,148,130,0.1); color: var(--cyan-400);">Sérénité retrouvée</div>
+        <div class="testi-quote">
+          <mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[TÉMOIGNAGE À REMPLACER]</mark> « Avant, tout était dans ma tête et je vivais avec une boule au ventre. Laura a tout centralisé dans Notion et clarifié mes process. Aujourd'hui je sais où en est mon business à chaque instant. C'est un soulagement énorme. »
+        </div>
+        <div class="testi-author">
+          <div class="testi-av">T</div>
+          <div><div class="testi-name">Thomas L.</div><div class="testi-role">Consultant · Paris</div></div>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="testi-result" style="background: rgba(194,103,78,0.1); color: var(--purple-400);">Un business enfin structuré</div>
+        <div class="testi-quote">
+          <mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[TÉMOIGNAGE À REMPLACER]</mark> « Les automatisations qu'a mises en place Laura ont éliminé un paquet de tâches manuelles. Mon opérationnel est structuré, mes outils communiquent enfin entre eux. J'ai l'impression d'avoir une vraie organisation derrière moi. »
+        </div>
+        <div class="testi-author">
+          <div class="testi-av">A</div>
+          <div><div class="testi-name">Alexandre D.</div><div class="testi-role">Prestataire indépendant · Bruxelles</div></div>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="testi-result" style="background: rgba(202,154,82,0.1); color: var(--amber-400);">La délégation enfin possible</div>
+        <div class="testi-quote">
+          <mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[TÉMOIGNAGE À REMPLACER]</mark> « Je n'arrivais jamais à déléguer faute de process clairs. Laura a documenté mes procédures et organisé la répartition des tâches. Mes prestataires avancent maintenant sans m'attendre, et j'ai enfin pu partir en vacances l'esprit tranquille. »
+        </div>
+        <div class="testi-author">
+          <div class="testi-av">J</div>
+          <div><div class="testi-name">Julie P.</div><div class="testi-role">Formatrice indépendante · Genève</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================ -->
+<!-- 9. GARANTIE                                                     -->
+<!-- ============================================================ -->
+<section class="section" style="padding-top: 80px; padding-bottom: 80px;">
+  <div class="container-narrow" style="text-align: center;">
+    <span class="label" style="border-color: rgba(111,138,95,0.3); color: var(--green-400); background: rgba(111,138,95,0.06);">Garantie</span>
+    <h2 class="fade-up">Le risque est <span class="serif">de mon côté</span></h2>
+    
+    <div class="garantie-box fade-up">
+      <div class="garantie-icon">🛡️</div>
+      <h3 style="font-size: 1.5rem; margin-bottom: 20px;">Votre opérationnel structuré et documenté,<br/>ou je continue jusqu'à ce que ce soit le cas</h3>
+      <p style="font-size: 1.0625rem; color: var(--gray-200); line-height: 1.8; max-width: 550px; margin: 0 auto;">
+        Si vous suivez le plan et jouez le jeu des points de pilotage, et que votre organisation n'est pas <strong style="color: var(--white);">clarifiée et documentée</strong> à la fin du sprint, je continue de vous accompagner sans frais jusqu'à ce que ce soit le cas. La méthode fonctionne, la seule variable,<br/>c'est votre engagement.
+      </p>
+      <p style="margin-top: 24px; font-size: 1rem; color: var(--green-400); font-weight: 600;">
+        Le seul risque, c'est de continuer à tout porter seul.
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================ -->
+<!-- 10. QUALIFICATION · C'est pour vous / Pas pour vous (NO LISTS) -->
+<!-- ============================================================ -->
+<section class="section">
+  <div class="container" style="text-align: center;">
+    <span class="label">Pour qui ?</span>
+    <h2 class="fade-up">C'est pour vous ?<br/><span class="serif">Vérifiez.</span></h2>
+
+    <div class="qual-grid fade-up stagger-children">
+      <div class="qual-col qual-yes">
+        <div class="qual-title" style="color: var(--green-400);">✅ C'est pour vous si <span class="qual-count qual-count-green">6 critères</span></div>
+        <div class="qual-items">
+          <div class="qual-item qual-item-yes"><span class="qual-num qual-num-green">01</span> Vous êtes entrepreneur, coach, infopreneur ou prestataire et vous croulez sous l'opérationnel</div>
+          <div class="qual-item qual-item-yes"><span class="qual-num qual-num-green">02</span> Vous avez déjà du chiffre d'affaires et des clients, votre activité tourne</div>
+          <div class="qual-item qual-item-yes"><span class="qual-num qual-num-green">03</span> Vous êtes prêt à déléguer et à documenter ce qui est aujourd'hui dans votre tête</div>
+          <div class="qual-item qual-item-yes"><span class="qual-num qual-num-green">04</span> Vous voulez structurer votre business pour le faire grandir, pas juste tenir</div>
+          <div class="qual-item qual-item-yes"><span class="qual-num qual-num-green">05</span> Vous voulez vous concentrer sur votre zone de génie et lâcher le reste</div>
+          <div class="qual-item qual-item-yes"><span class="qual-num qual-num-green">06</span> Vous êtes prêt à investir dans une organisation qui vous rend du temps</div>
+        </div>
+      </div>
+      <div class="qual-col qual-no">
+        <div class="qual-title" style="color: var(--red-400);">❌ Ce n'est PAS pour vous si <span class="qual-count qual-count-red">6 critères</span></div>
+        <div class="qual-items">
+          <div class="qual-item qual-item-no"><span class="qual-num qual-num-red">01</span> Vous cherchez surtout à acquérir des clients ou à vendre : ce n'est pas le sujet ici</div>
+          <div class="qual-item qual-item-no"><span class="qual-num qual-num-red">02</span> Vous voulez tout garder dans votre tête et ne rien documenter</div>
+          <div class="qual-item qual-item-no"><span class="qual-num qual-num-red">03</span> Vous débutez et n'avez pas encore d'activité réelle</div>
+          <div class="qual-item qual-item-no"><span class="qual-num qual-num-red">04</span> Vous n'êtes pas prêt à déléguer ni à faire confiance</div>
+          <div class="qual-item qual-item-no"><span class="qual-num qual-num-red">05</span> Vous n'êtes pas prêt à investir dans votre structure</div>
+          <div class="qual-item qual-item-no"><span class="qual-num qual-num-red">06</span> Vous avez déjà une organisation opérationnelle solide et pilotée</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================================ -->
+<!-- 11. FAQ — Objections traitées (NO LISTS IN ANSWERS)            -->
+<!-- ============================================================ -->
+<section id="faq" class="section" style="background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(194,103,78,0.03), transparent 70%);">
+  <div class="container-narrow" style="text-align: center;">
+    <span class="label">FAQ</span>
+    <h2 class="fade-up">Tout ce que vous voulez <span class="serif">savoir.</span></h2>
+
+    <div class="faq-list fade-up">
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <div class="faq-q-text">C'est quoi un OBM, concrètement ?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">
+          <p>Un OBM (Online Business Manager) est la personne qui structure et pilote l'opérationnel de votre business à votre place.<br/>Concrètement, je cartographie ce que vous portez, je documente vos process, je connecte vos outils, j'automatise les tâches répétitives et j'organise la délégation.<br/>Vous gardez la vision et votre zone de génie, je m'occupe de faire tourner la machine en coulisses.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <div class="faq-q-text">En quoi c'est différent d'une assistante virtuelle ?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">
+          <p>Une assistante virtuelle exécute des tâches que vous lui confiez : elle agit DANS votre business.<br/>Un OBM travaille SUR votre business : je conçois la structure, je mets en place les systèmes, je pilote les priorités et je coordonne les personnes (y compris une éventuelle assistante).<br/>Je ne me contente pas de faire des tâches, je construis l'organisation qui les fait tourner.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <div class="faq-q-text">Combien de temps pour voir mon opérationnel structuré ?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">
+          <p>Tout commence par l'audit, qui vous donne une vision claire et un plan d'action en quelques jours.<br/>Le Sprint Structuration met ensuite en place l'essentiel de votre organisation : centralisation Notion, process documentés, outils connectés, automatisations et tableau de bord.<br/>Dès les premières semaines, vous ressentez le gain : moins de charge mentale, des infos centralisées, des tâches qui tournent toutes seules.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <div class="faq-q-text">Ça marche pour mon activité ?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">
+          <p>La méthode est conçue pour tout entrepreneur, coach, infopreneur ou prestataire qui croule sous l'opérationnel.<br/>Les principes sont universels : clarifier, documenter, outiller, automatiser, déléguer, piloter.<br/>Seuls les détails s'adaptent à votre métier et à vos outils, et c'est exactement ce qu'on cale ensemble dès l'audit.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <div class="faq-q-text">Je n'ai pas un gros budget.</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">
+          <p>On peut commencer petit : l'audit vous donne déjà une feuille de route claire et priorisée, sans engager tout de suite un sprint complet.<br/>Le vrai coût, c'est celui de l'inaction : les heures englouties chaque mois dans des tâches que vous pourriez documenter, automatiser ou déléguer.<br/>On adapte le périmètre à votre réalité, et le montant de l'audit est déduit si vous poursuivez avec le Sprint.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <div class="faq-q-text">Et si je ne peux pas déléguer tout de suite ?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">
+          <p>Aucun problème : structurer ne veut pas dire recruter immédiatement.<br/>On commence par documenter vos process et automatiser ce qui peut l'être, ce qui vous rend déjà beaucoup de temps, même sans équipe.<br/>Quand vous serez prêt à déléguer, tout sera en place pour qu'une personne (ou un prestataire) prenne le relais sans friction, parce que les procédures existeront déjà.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <div class="faq-q-text">Qu'est-ce qui vous différencie ?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">
+          <p>Je ne me contente pas d'exécuter des tâches ni de vous donner des conseils que vous devrez appliquer seul.<br/>J'installe ET je pilote votre système opérationnel avec vous : process, outils, automatisations, délégation, pilotage.<br/>Vous repartez avec une organisation qui tourne, et un accompagnement qui la fait durer dans le temps.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          <div class="faq-q-text">C'est rentable en combien de temps ?</div>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-a">
+          <p>La rentabilité se mesure surtout en temps rendu et en énergie récupérée.<br/>Chaque heure que vous ne passez plus sur des tâches répétitives ou de l'admin est une heure réinvestie dans votre activité, vos clients ou votre vie.<br/>En libérant le goulot d'étranglement (vous), votre business retrouve aussi sa capacité à grandir, ce qui dépasse largement l'investissement de départ.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- 11.5 DIAGNOSTIC GRATUIT — v2 Premium                          -->
+<!-- ============================================================ -->
+<section id="diagnostic" class="section" style="padding-top: 80px; padding-bottom: 80px; background: radial-gradient(ellipse 80% 50% at 50% 50%, rgba(194,103,78,0.05), transparent 70%);">
+  <div class="container" style="text-align: center;">
+    <span class="label">Diagnostic gratuit · 2 min</span>
+    <h2 class="fade-up">Où en est votre <span class="serif">opérationnel</span> ?</h2>
+    <p class="fade-up" style="max-width: 600px; margin: 0 auto 48px;">
+      6 questions. Un score sur chaque pilier de la Méthode Laura Gabriele.<br/>Des recommandations concrètes et l'accompagnement qui correspond à votre situation.
+    </p>
+
+    <div class="diag-container fade-up">
+      <div class="diag-card">
+        <div class="diag-card-inner" id="diagBox">
+
+          <!-- SVG DEFS for ring gradient -->
+          <svg width="0" height="0" style="position:absolute;">
+            <defs>
+              <linearGradient id="diagRingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#c2674e"/>
+                <stop offset="100%" stop-color="#7d9482"/>
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <!-- PROGRESS RING (hidden on intro & results) -->
+          <div class="diag-ring-wrap" id="diagRingWrap" style="display:none;">
+            <div class="diag-ring">
+              <svg viewBox="0 0 60 60">
+                <circle class="diag-ring-bg" cx="30" cy="30" r="26"/>
+                <circle class="diag-ring-fill" id="diagRingFill" cx="30" cy="30" r="26"/>
+              </svg>
+              <div class="diag-ring-text" id="diagRingText">1/6</div>
+            </div>
+            <div class="diag-ring-label" id="diagRingLabel">Pilier · Diagnostic</div>
+          </div>
+
+          <div class="diag-step-wrap">
+
+          <!-- STEP 0: Intro -->
+          <div class="diag-step active" data-step="0">
+            <div style="font-size: 2.5rem; margin-bottom: 16px;">⚡</div>
+            <div class="diag-step-q">Évaluez votre opérationnel<br/>en 6 questions.</div>
+            <p style="font-size: 0.875rem; color: var(--gray-400); margin-bottom: 8px; line-height: 1.6;">
+              Score personnalisé sur les 6 piliers de la Méthode Laura Gabriele, conseils immédiats et orientation vers l'accompagnement adapté à votre situation.
+            </p>
+            <div class="diag-nav">
+              <div></div>
+              <button class="diag-btn diag-btn--next" onclick="diagNext()">Commencer →</button>
+            </div>
+          </div>
+
+          <!-- STEP 1: Diagnostic / Clarté des process -->
+          <div class="diag-step" data-step="1">
+            <div class="diag-step-label">Pilier 01 / 06 · Diagnostic</div>
+            <div class="diag-step-q">Quelle est la clarté de vos process ?</div>
+            <div class="diag-options">
+              <div class="diag-opt" onclick="diagSelect(this, 1)" data-score="1">
+                <div class="diag-opt-radio"></div>
+                <div class="diag-opt-text">Tout est dans ma tête, rien n'est documenté, je fais au feeling</div>
+              </div>
+              <div class="diag-opt" onclick="diagSelect(this, 1)" data-score="2">
+                <div class="diag-opt-radio"></div>
+                <div class="diag-opt-text">Quelques notes éparses, mais aucune vue d'ensemble de ce que je porte</div>
+              </div>
+              <div class="diag-opt" onclick="diagSelect(this, 1)" data-score="3">
+                <div class="diag-opt-radio"></div>
+                <div class="diag-opt-text">Mes tâches et mes process sont cartographiés et clairs pour moi</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2: Structuration / Organisation -->
+          <div class="diag-step" data-step="2">
+            <div class="diag-step-label">Pilier 02 / 06 · Structuration</div>
+            <div class="diag-step-q">Comment vos process sont-ils organisés ?</div>
+            <div class="diag-options">
+              <div class="diag-opt" onclick="diagSelect(this, 2)" data-score="1">
+                <div class="diag-opt-radio"></div>
+                <div class="diag-opt-text">Aucune procédure documentée, je réinvente chaque fois la même chose</div>
+              </div>
+              <div class="diag-opt" onclick="diagSelect(this, 2)" data-score="2">
+                <div class="diag-opt-radio"></div>
+                <div class="diag-opt-text">Quelques procédures écrites, mais pas centralisées ni à jour</div>
+              </div>
+              <div class="diag-opt" onclick="diagSelect(this, 2)" data-score="3">
+                <div class="diag-opt-radio"></div>
+                <div class="diag-opt-text">Process documentés (SOP), organisation centralisée et flux de travail clairs</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 3: Outils & automatisations -->
+          <div class="diag-step" data-step="3">
+            <div class="diag-step-label">Pilier 03 / 06 · Outils & automatisations</div>
+            <div class="diag-step-q">Où en êtes-vous côté outils et automatisations ?</div>
+            <div class="diag-options">
+              <div class="diag-opt" onclick="diagSelect(this, 3)" data-score="1">
+                <div class="diag-opt-radio"></div>
+                <div class="diag-opt-text">Mes outils sont un bazar, je fais tout manuellement et je perds des infos</div>
+              </div>
+              <div class="diag-opt" onclick="diagSelect(this, 3)" data-score="2">
+                <div class="diag-opt-radio"></div>
+                <div class="diag-opt-text">J'ai des outils mais ils ne communiquent pas entre eux, peu d'automatisations</div>
+              </div>
+              <div class="diag-opt" onclick="diagSelect(this, 3)" data-score="3">
+                <div class="diag-opt-radio"></div>
+                <div class="diag-opt-text">Outils connectés et tâches répétitives automatisées qui me font gagner des heures</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 4: Pilotage / KPIs -->
+          <div class="diag-step" data-step="4">
+            <div class="diag-step-label">Pilier 04 / 06 · Pilotage</div>
+            <div class="diag-step-q">Comment pilotez-vous votre activité au quotidien ?</div>
+            <div class="diag-options">
+              <div class="diag-opt" onclick="diagSelect(this, 4)" data-score="1">
+                <div class="diag-opt-radio"></div>
+                <div class="diag-opt-text">À l'instinct, sans visibilité claire sur mes priorités ni mes chiffres</div>
+              </div>
+              <div class="diag-opt" onclick="diagSelect(this, 4)" data-score="2">
+                <div class="diag-opt-radio"></div>
+                <div class="diag-opt-text">Je suis quelques chiffres, mais de façon irrégulière et dispersée</div>
+              </div>
+              <div class="diag-opt" onclick="diagSelect(this, 4)" data-score="3">
+                <div class="diag-opt-radio"></div>
+                <div class="diag-opt-text">Tableau de bord KPIs et suivi des priorités : je vois tout en un coup d'œil</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 5: Équipe & délégation -->
+          <div class="diag-step" data-step="5">
+            <div class="diag-step-label">Pilier 05 / 06 · Équipe & délégation</div>
+            <div class="diag-step-q">Comment se passe la délégation ?</div>
+            <div class="diag-options">
+              <div class="diag-opt" onclick="diagSelect(this, 5)" data-score="1">
+                <div class="diag-opt-radio"></div>
+                <div class="diag-opt-text">Je fais tout moi-même, impossible de déléguer ou de prendre des vacances</div>
+              </div>
+              <div class="diag-opt" onclick="diagSelect(this, 5)" data-score="2">
+                <div class="diag-opt-radio"></div>
+                <div class="diag-opt-text">Je délègue un peu, mais sans process clairs, donc je dois tout reprendre</div>
+              </div>
+              <div class="diag-opt" onclick="diagSelect(this, 5)" data-score="3">
+                <div class="diag-opt-radio"></div>
+                <div class="diag-opt-text">Délégation structurée : mon équipe ou mes prestataires avancent sans m'attendre</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 6: Optimisation -->
+          <div class="diag-step" data-step="6">
+            <div class="diag-step-label">Pilier 06 / 06 · Optimisation</div>
+            <div class="diag-step-q">Améliorez-vous votre organisation dans la durée ?</div>
+            <div class="diag-options">
+              <div class="diag-opt" onclick="diagSelect(this, 6)" data-score="1">
+                <div class="diag-opt-radio"></div>
+                <div class="diag-opt-text">Non, je subis le quotidien et je n'ai jamais le temps d'améliorer quoi que ce soit</div>
+              </div>
+              <div class="diag-opt" onclick="diagSelect(this, 6)" data-score="2">
+                <div class="diag-opt-radio"></div>
+                <div class="diag-opt-text">J'ajuste de temps en temps, mais sans méthode ni suivi des résultats</div>
+              </div>
+              <div class="diag-opt" onclick="diagSelect(this, 6)" data-score="3">
+                <div class="diag-opt-radio"></div>
+                <div class="diag-opt-text">Je mesure, j'ajuste et j'améliore régulièrement : la machine se perfectionne</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 7: OPT-IN GATE -->
+          <div class="diag-step" data-step="7">
+            <div style="text-align:center;">
+              <div style="font-size: 2.5rem; margin-bottom: 16px;">📊</div>
+              <div class="diag-step-q">Votre diagnostic est prêt.</div>
+              <p style="font-size: 0.875rem; color: var(--gray-400); margin-bottom: 28px; line-height: 1.6;">
+                Renseignez votre prénom et votre email pour découvrir votre score opérationnel, vos axes d'amélioration et l'accompagnement adapté à votre situation.
+              </p>
+            </div>
+            <div class="diag-field">
+              <label for="diagName">Prénom *</label>
+              <input type="text" id="diagName" placeholder="Jean" />
+              <div class="diag-error-msg" id="errName">Merci de renseigner votre prénom</div>
+            </div>
+            <div class="diag-field">
+              <label for="diagEmail">Email *</label>
+              <input type="email" id="diagEmail" placeholder="jean@monbusiness.com" />
+              <div class="diag-error-msg" id="errEmail">Merci de renseigner une adresse email valide</div>
+            </div>
+            <div class="diag-nav">
+              <div></div>
+              <button class="diag-btn diag-btn--next" onclick="diagSubmitOptin()">Voir mes résultats →</button>
+            </div>
+            <div style="font-size:0.6875rem; color:var(--gray-600); margin-top:12px; text-align:center;">Pas de spam. Juste votre diagnostic et les ressources qui vont avec.</div>
+          </div>
+
+          <!-- STEP 8: RESULTS -->
+          <div class="diag-step" data-step="8">
+            <div class="diag-results-header">
+              <div class="diag-score-big" id="diagScoreBig">0<span style="font-size:0.4em; color:var(--gray-500);">/18</span></div>
+              <div class="diag-score-label">Score opérationnel</div>
+              <div class="diag-level-badge" id="diagLevelBadge"></div>
+            </div>
+
+            <div class="diag-results-grid">
+              <div class="diag-radar">
+                <svg viewBox="0 0 300 300" id="diagRadar" style="width:100%;height:100%;"></svg>
+              </div>
+              <div class="diag-scores" id="diagScores"></div>
+            </div>
+
+            <!-- Tips -->
+            <div class="diag-tips" id="diagTips"></div>
+
+            <!-- Offer recommendation -->
+            <div class="diag-reco" id="diagReco"></div>
+          </div>
+
+          </div><!-- /diag-step-wrap -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  const piliers = [
+    { key:'diagnostic', name:'Diagnostic', icon:'🔍' },
+    { key:'structuration', name:'Structuration', icon:'🧱' },
+    { key:'outils', name:'Outils', icon:'⚙️' },
+    { key:'pilotage', name:'Pilotage', icon:'📊' },
+    { key:'equipe', name:'Délégation', icon:'🤝' },
+    { key:'optimisation', name:'Optimisation', icon:'🔄' }
+  ];
+
+  const tips = {
+    diagnostic: "Commencez par lister TOUT ce que vous portez : tâches, outils, process. On ne peut structurer que ce qu'on a d'abord rendu visible.",
+    structuration: "Documentez vos 3 process les plus récurrents sous forme de procédures simples (SOP). Centralisez tout au même endroit, par exemple dans Notion.",
+    outils: "Identifiez vos tâches répétitives et reliez vos outils entre eux. Une seule automatisation bien placée (Make ou Zapier) peut vous rendre des heures chaque semaine.",
+    pilotage: "Mettez en place un tableau de bord avec 3 à 5 indicateurs clés. Voir où en est votre business en un coup d'œil change votre façon de décider.",
+    equipe: "Avant de déléguer, documentez le « qui fait quoi, comment ». Avec des process clairs, une personne ou un prestataire peut avancer sans vous attendre.",
+    optimisation: "Bloquez un point régulier pour mesurer, ajuster et améliorer vos process. La machine se perfectionne, et vous restez sur votre zone de génie."
+  };
+
+  const WEBHOOK_URL = 'https://TON-WEBHOOK-N8N.app/webhook/diagnostic-pulse';
+  const circumference = 2 * Math.PI * 26; // ring radius 26
+  let currentStep = 0;
+  const scores = [0,0,0,0,0,0];
+
+  function updateRing() {
+    const qStep = currentStep; // 1-6 are question steps
+    if (qStep < 1 || qStep > 6) return;
+    const pct = qStep / 6;
+    const offset = circumference * (1 - pct);
+    document.getElementById('diagRingFill').style.strokeDashoffset = offset;
+    document.getElementById('diagRingText').textContent = qStep + '/6';
+    document.getElementById('diagRingLabel').textContent = 'Pilier · ' + piliers[qStep - 1].name;
+  }
+
+  window.diagSelect = function(el, stepIdx) {
+    el.parentElement.querySelectorAll('.diag-opt').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    scores[stepIdx - 1] = parseInt(el.dataset.score);
+    // Auto-advance after 600ms
+    setTimeout(() => { diagNext(); }, 600);
+  };
+
+  function showStep(n) {
+    const allSteps = document.querySelectorAll('.diag-step');
+    const current = document.querySelector('.diag-step.active');
+    const target = document.querySelector('.diag-step[data-step="'+n+'"]');
+    if (current) {
+      current.classList.remove('active');
+      current.classList.add('exit-left');
+      setTimeout(() => { current.classList.remove('exit-left'); current.style.display = 'none'; }, 350);
+    }
+    if (target) {
+      target.style.display = '';
+      setTimeout(() => { target.classList.add('active'); }, 50);
+    }
+
+    const ringWrap = document.getElementById('diagRingWrap');
+    if (n >= 1 && n <= 6) {
+      ringWrap.style.display = 'flex';
+      updateRing();
+    } else {
+      ringWrap.style.display = 'none';
+    }
+  }
+
+  function animateScore(target) {
+    const el = document.getElementById('diagScoreBig');
+    let current = 0;
+    const duration = 1200;
+    const start = performance.now();
+    function tick(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      current = Math.round(target * eased);
+      el.innerHTML = current + '<span style="font-size:0.4em; color:var(--gray-500);">/18</span>';
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function buildResults() {
+    const total = scores.reduce((a,b) => a+b, 0);
+    const avg = total / 6;
+    const userName = document.getElementById('diagName').value.trim().split(' ')[0];
+
+    // Animate score
+    animateScore(total);
+
+    // Level badge
+    const badge = document.getElementById('diagLevelBadge');
+    if (avg <= 1.3) { badge.textContent = '🔴 Critique'; badge.style.background = 'rgba(198,93,69,0.12)'; badge.style.color = '#c65d45'; badge.style.borderColor = 'rgba(198,93,69,0.2)'; }
+    else if (avg <= 1.8) { badge.textContent = '🟠 Fragile'; badge.style.background = 'rgba(192,138,60,0.12)'; badge.style.color = '#c08a3c'; }
+    else if (avg <= 2.3) { badge.textContent = '🟡 En construction'; badge.style.background = 'rgba(168,116,44,0.12)'; badge.style.color = '#a8742c'; }
+    else { badge.textContent = '🟢 Solide'; badge.style.background = 'rgba(92,118,80,0.12)'; badge.style.color = '#5c7650'; }
+
+      document.getElementById('diagLevelBadge').insertAdjacentHTML('afterend', '<div style="margin-top:10px; font-size:0.875rem; color:var(--gray-400);">'+userName+', voici votre diagnostic.</div>');
+
+    // Radar
+    const cx = 150, cy = 150, R = 115;
+    const angles = piliers.map((_, i) => (Math.PI * 2 * i / 6) - Math.PI / 2);
+    const svg = document.getElementById('diagRadar');
+    let h = '<defs><linearGradient id="radarGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="rgba(194,103,78,0.25)"/><stop offset="100%" stop-color="rgba(125,148,130,0.15)"/></linearGradient></defs>';
+    [0.33, 0.66, 1].forEach(p => {
+      const r = R * p;
+      h += '<polygon points="'+angles.map(a => (cx+r*Math.cos(a))+','+(cy+r*Math.sin(a))).join(' ')+'" fill="none" stroke="rgba(40,38,34,0.06)" stroke-width="1"/>';
+    });
+    angles.forEach((a, i) => {
+      h += '<line x1="'+cx+'" y1="'+cy+'" x2="'+(cx+R*Math.cos(a))+'" y2="'+(cy+R*Math.sin(a))+'" stroke="rgba(40,38,34,0.04)" stroke-width="1"/>';
+      const lx = cx+(R+28)*Math.cos(a), ly = cy+(R+28)*Math.sin(a);
+      h += '<text x="'+lx+'" y="'+(ly-6)+'" text-anchor="middle" dominant-baseline="middle" fill="rgba(40,38,34,0.5)" font-size="14">'+piliers[i].icon+'</text>';
+      h += '<text x="'+lx+'" y="'+(ly+8)+'" text-anchor="middle" dominant-baseline="middle" fill="rgba(40,38,34,0.3)" font-size="7" font-family="JetBrains Mono,monospace" font-weight="600">'+piliers[i].name.toUpperCase()+'</text>';
+    });
+    h += '<polygon points="'+scores.map((s,i) => {const r=(s/3)*R; return (cx+r*Math.cos(angles[i]))+','+(cy+r*Math.sin(angles[i]));}).join(' ')+'" fill="url(#radarGrad)" stroke="rgba(194,103,78,0.7)" stroke-width="2"/>';
+    scores.forEach((s,i) => {
+      const r=(s/3)*R;
+      h += '<circle cx="'+(cx+r*Math.cos(angles[i]))+'" cy="'+(cy+r*Math.sin(angles[i]))+'" r="5" fill="#c2674e" style="filter:drop-shadow(0 0 4px rgba(194,103,78,0.6));"/>';
+    });
+    svg.innerHTML = h;
+
+    // Score bars
+    const se = document.getElementById('diagScores');
+    let bh = '';
+    scores.forEach((s, i) => {
+      const lv = s<=1?'low':s<=2?'mid':'high';
+      bh += '<div class="diag-score-row"><div class="diag-score-header"><div class="diag-score-name">'+piliers[i].icon+' '+piliers[i].name+'</div><div class="diag-score-val '+lv+'">'+s+'/3</div></div><div class="diag-score-bar-bg"><div class="diag-score-bar-fill '+lv+'" style="width:0%"></div></div></div>';
+    });
+    se.innerHTML = bh;
+    setTimeout(() => { se.querySelectorAll('.diag-score-bar-fill').forEach((b,i) => { b.style.width = Math.round((scores[i]/3)*100)+'%'; }); }, 200);
+
+    // Tips for weak pillars
+    const weakPiliers = [];
+    scores.forEach((s,i) => { if (s <= 2) weakPiliers.push(i); });
+    const tipsEl = document.getElementById('diagTips');
+    if (weakPiliers.length > 0) {
+      const topWeak = weakPiliers.sort((a,b) => scores[a] - scores[b]).slice(0, 3);
+      let th = '<div class="diag-tips-title">⚡ Actions prioritaires</div>';
+      topWeak.forEach(i => {
+        th += '<div class="diag-tip"><div class="diag-tip-icon">'+piliers[i].icon+'</div><div><strong style="color:var(--white);">'+piliers[i].name+'</strong> · '+tips[piliers[i].key]+'</div></div>';
+      });
+      tipsEl.innerHTML = th;
+    } else {
+      tipsEl.innerHTML = '<div class="diag-tips-title">🎯 Vous êtes au top</div><div class="diag-tip"><div class="diag-tip-icon">🚀</div><div>Votre opérationnel est solide. L\'étape suivante : le maintenir et l\'affiner dans la durée avec un pilotage continu.</div></div>';
+    }
+
+    // Offer recommendation
+    let pack, price, why, link, ctaText;
+    if (avg <= 1.5) {
+      pack = 'AUDIT'; price = '[Prix à définir]'; link = '#contact';
+      ctaText = 'Démarrer par l\'audit →';
+      why = userName+', votre opérationnel a besoin d\'y voir clair avant tout. L\'Audit cartographie ce que vous portez, repère les points de friction et vous donne une feuille de route priorisée.';
+    } else if (avg <= 2.3) {
+      pack = 'SPRINT STRUCTURATION'; price = '[Prix à définir]'; link = '#offres';
+      ctaText = 'Lancer mon Sprint →';
+      why = userName+', vous avez des bases mais votre organisation a des failles. Le Sprint Structuration installe tout votre système opérationnel : process documentés, outils connectés, automatisations, tableau de bord et délégation.';
+    } else {
+      pack = 'PILOTAGE CONTINU'; price = '[Prix à définir]'; link = '#contact';
+      ctaText = 'Discuter du pilotage →';
+      why = userName+', votre opérationnel est solide. Vous êtes prêt pour un pilotage continu : gestion de projet, suivi des KPIs et amélioration de vos process, mois après mois.';
+    }
+
+    document.getElementById('diagReco').innerHTML =
+      '<div class="diag-reco-label">L\'accompagnement adapté à votre situation</div>' +
+      '<div class="diag-reco-pack">'+pack+'</div>' +
+      '<div class="diag-reco-price">'+price+'</div>' +
+      '<div class="diag-reco-why">'+why+'</div>' +
+      '<a href="'+link+'" class="diag-reco-cta">'+ctaText+'</a>';
+  }
+
+  function sendToWebhook() {
+    const name = document.getElementById('diagName').value.trim();
+    const email = document.getElementById('diagEmail').value.trim();
+    const total = scores.reduce((a,b) => a+b, 0);
+    const avg = total / 6;
+    let pack;
+    if (avg <= 1.5) pack = 'Audit';
+    else if (avg <= 2.3) pack = 'Sprint Structuration';
+    else pack = 'Pilotage Continu';
+
+    const minScore = Math.min(...scores);
+    const minIdx = scores.indexOf(minScore);
+    const blocageMap = ['Diagnostic', 'Structuration', 'Outils', 'Pilotage', 'Délégation', 'Optimisation'];
+    let blocage = blocageMap[minIdx] || 'Mix';
+    if (scores.filter(s => s <= 1).length >= 3) blocage = 'Mix';
+
+    const payload = {
+      nom_complet: name,
+      email: email,
+      score_diagnostic: scores[0],
+      score_structuration: scores[1],
+      score_outils: scores[2],
+      score_pilotage: scores[3],
+      score_delegation: scores[4],
+      score_optimisation: scores[5],
+      score_audit: total,
+      offre_recommandee: pack,
+      origine: 'Site Laura Gabriele',
+      canal: 'Inbound',
+      stage: 'Lead',
+      statut: 'Open',
+      blocage_principal: blocage,
+      declencheur: 'Diagnostic opérationnel · score ' + total + '/18',
+      next_action: 'Email séquence diagnostic + relance J+3',
+      date_audit: new Date().toISOString(),
+      date_audit_is_datetime: 1,
+      timestamp: new Date().toISOString()
+    };
+
+    if (WEBHOOK_URL && !WEBHOOK_URL.includes('TON-WEBHOOK')) {
+      fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        mode: 'no-cors'
+      }).catch(() => {});
+    }
+    console.log('📊 Diagnostic opérationnel envoyé:', payload);
+  }
+
+  window.diagSubmitOptin = function() {
+    const name = document.getElementById('diagName');
+    const email = document.getElementById('diagEmail');
+    const errN = document.getElementById('errName');
+    const errE = document.getElementById('errEmail');
+    let v = true;
+    name.classList.remove('error'); errN.classList.remove('show');
+    email.classList.remove('error'); errE.classList.remove('show');
+    if (!name.value.trim() || name.value.trim().length < 2) {
+      name.classList.add('error'); errN.classList.add('show'); v = false;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+      email.classList.add('error'); errE.classList.add('show'); v = false;
+    }
+    if (!v) return;
+
+    // Move to results
+    currentStep = 8;
+    showStep(8);
+    buildResults();
+    sendToWebhook();
+  };
+
+  window.diagNext = function() {
+    if (currentStep >= 1 && currentStep <= 6 && scores[currentStep-1] === 0) return;
+    currentStep++;
+    // Step 7 is opt-in gate — stop here, results triggered by diagSubmitOptin
+    if (currentStep > 7) return;
+    showStep(currentStep);
+  };
+
+  window.diagPrev = function() {
+    if (currentStep > 0) { currentStep--; showStep(currentStep); }
+  };
+})();
+</script>
+
+<!-- ============================================================ -->
+<!-- 12. CTA FINAL — Le closing                                     -->
+<!-- ============================================================ -->
+<section id="contact" class="final-cta">
+  <div class="final-content container-narrow">
+    <span class="label">On en parle ?</span>
+    <h2 class="fade-up">Prêt à reprendre la main<br/>sur votre <span class="serif">opérationnel</span> ?</h2>
+    <p class="fade-up" style="max-width: 600px; margin: 24px auto 48px; font-size: 1.1875rem; color: var(--gray-200);">
+      Un appel découverte pour parler de votre quotidien et de ce qui vous pèse.
+      <strong style="color: var(--white);">Pas de pitch. Pas de pression.</strong> Juste une conversation honnête.
+    </p>
+
+    <div class="fade-up"><a href="#contact" class="btn btn-lg">Réserver mon appel découverte →</a><div style="margin-top:14px;"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[LIEN DE RÉSERVATION DE LAURA]</mark></div></div>
+
+    <div class="final-steps fade-up stagger-children">
+      <div class="final-step"><div class="final-step-num">1</div><div class="final-step-text">Vous réservez un créneau d'appel découverte</div></div>
+      <div class="final-step"><div class="final-step-num">2</div><div class="final-step-text">On échange pour comprendre votre quotidien et vos besoins</div></div>
+      <div class="final-step"><div class="final-step-num">3</div><div class="final-step-text">Si c'est aligné, on démarre par un audit</div></div>
+      <div class="final-step"><div class="final-step-num">4</div><div class="final-step-text">Sinon, je vous oriente vers les bonnes ressources, zéro pression</div></div>
+    </div>
+
+    <p class="fade-up" style="margin-top: 40px; font-size: 0.875rem; color: var(--gray-500);">
+      Gratuit · Échange découverte · Sans engagement
+    </p>
+
+    <div class="ps-block fade-up">
+      <p>
+        <strong style="color: var(--purple-400);">P.S.</strong> Vous portez votre business seul depuis trop longtemps. La question n'est pas « est-ce que je peux me le permettre ? » mais « est-ce que je peux me permettre de continuer comme ça ? ». Chaque mois sans structure, ce sont des heures et de l'énergie englouties dans l'opérationnel. Dans quelques mois, deux scénarios : soit votre organisation tourne enfin sans reposer entièrement sur vous, soit vous êtes toujours au même point en vous disant « bientôt ».
+        <br/><br/>
+        <strong style="color: var(--white);">Le bon moment, c'est maintenant.</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div style="font-size: 1.5rem; font-weight: 900; color: var(--white); letter-spacing: -0.04em; margin-bottom: 8px;">Laura<span style="color: var(--purple-400);"> Gabriele</span></div>
+    <p style="color: var(--gray-500); font-size: 0.875rem; line-height: 1.7;">
+      Online Business Manager<br/>Je structure et je pilote votre opérationnel à votre place
+    </p>
+    <div class="footer-links">
+      <a href="#"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[LinkedIn de Laura]</mark></a>
+      <a href="#contact">Contact</a>
+      <a href="#">Mentions légales</a>
+      <a href="#">CGV</a>
+    </div>
+    <div style="margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(40,38,34,0.04);">
+      <p style="color: var(--gray-600); font-size: 0.8125rem;">© 2026 Laura Gabriele · Tous droits réservés</p>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY CTA MOBILE -->
+<div class="sticky-cta"><a href="#contact" class="btn" style="width: 100%; padding: 16px;">Reprendre la main →</a></div>
+
+<!-- PREMIUM EFFECTS ENGINE -->
+<script>
+(function(){
+  // ─── 1. SCROLL PROGRESS BAR ───
+  const progressBar = document.getElementById('scrollProgress');
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+
+  // ─── 2. CURSOR GLOW ───
+  const glow = document.getElementById('cursorGlow');
+  let glowX = -500, glowY = -500;
+  document.addEventListener('mousemove', function(e) {
+    glowX = e.clientX; glowY = e.clientY;
+    glow.style.left = glowX + 'px';
+    glow.style.top = glowY + 'px';
+  });
+
+  // ─── 3. INTERSECTION OBSERVER — master observer ───
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Counter animation for proof-val elements
+        if (entry.target.classList.contains('count-up')) {
+          animateCounter(entry.target);
+          obs.unobserve(entry.target);
+        }
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  // Observe all animated elements
+  document.querySelectorAll('.fade-up, .divider, .label, .stagger-children, .count-up').forEach(el => obs.observe(el));
+
+  // ─── 4. COUNTER ANIMATION ───
+  function animateCounter(el) {
+    const text = el.textContent.trim();
+    // Extract number and suffix
+    const match = text.match(/^([€]?)(\d+[\.,]?\d*)\s*(.*)/);
+    if (!match) return;
+    const prefix = match[1] || '';
+    const targetNum = parseFloat(match[2].replace(',', '.'));
+    const suffix = match[3] || '';
+    const isDecimal = match[2].includes(',') || match[2].includes('.');
+    const duration = 1500;
+    const start = performance.now();
+
+    function tick(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      const current = targetNum * eased;
+      if (isDecimal) {
+        el.textContent = prefix + current.toFixed(1).replace('.', ',') + ' ' + suffix;
+      } else {
+        el.textContent = prefix + Math.round(current) + (suffix ? ' ' + suffix : '');
+      }
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = text; // restore exact original
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // ─── 5. PROOF BAR — add count-up class ───
+  document.querySelectorAll('.proof-val').forEach(el => {
+    el.classList.add('count-up');
+    obs.observe(el);
+  });
+
+  // ─── 6. NAV SCROLL EFFECT ───
+  const nav = document.querySelector('nav');
+  let lastScroll = 0;
+  window.addEventListener('scroll', function() {
+    const st = window.scrollY;
+    if (st > 100) {
+      nav.style.borderBottom = '1px solid rgba(158,77,55,0.08)';
+      nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.3)';
+    } else {
+      nav.style.borderBottom = '1px solid rgba(40,38,34,0.06)';
+      nav.style.boxShadow = 'none';
+    }
+    lastScroll = st;
+  }, { passive: true });
+
+})();
+</script>
+
+</body>
+</html>
