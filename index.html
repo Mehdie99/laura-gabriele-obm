@@ -366,6 +366,10 @@
       }
     }
 
+    /* STATS BAND (chiffres coût) */
+    @media (max-width: 900px) { .stats-band { grid-template-columns: repeat(2, 1fr) !important; } }
+    @media (max-width: 520px) { .stats-band { grid-template-columns: 1fr !important; } }
+
     /* PROOF BAR */
     .proof-bar { padding: 40px 0; border-top: 1px solid rgba(31,28,24,0.08); border-bottom: 1px solid rgba(31,28,24,0.08); background: rgba(31,28,24,0.012); }
     .proof-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: center; }
@@ -1791,8 +1795,10 @@
   <div class="nav-inner">
     <a href="#" class="nav-logo">Laura<span> Gabriele</span></a>
     <div class="nav-links">
+      <a href="#pour-qui">Pour qui ?</a>
+      <a href="#qui-je-suis">Qui je suis</a>
       <a href="#methode">Méthode</a>
-      <a href="#offres">Accompagnement</a>
+      <a href="#offres">Offres</a>
       <a href="#faq">FAQ</a>
       <a href="#contact" class="btn nav-cta">On en parle →</a>
     </div>
@@ -1818,7 +1824,7 @@
     </h1>
 
     <p class="hero-sub fade-up">
-      Je structure et je pilote votre opérationnel à votre place :<br/>process, outils, automatisations, délégation, pilotage,<br/><strong style="color: var(--white);">pour que vous vous concentriez enfin sur votre zone de génie.</strong>
+      Je structure et je pilote votre opérationnel à votre place,<br/>tout en prenant soin de vos clients et de votre communauté.<br/><strong style="color: var(--white);">Pour que vous vous concentriez enfin sur votre zone de génie, et que tout continue de tenir, avec ou sans vous.</strong>
     </p>
 
     <div class="hero-stats fade-up">
@@ -1849,25 +1855,13 @@
   </div>
 </section>
 
-<!-- PROOF BAR -->
-<div class="proof-bar">
-  <div class="container">
-    <div class="proof-grid stagger-children">
-      <div><div class="proof-val gradient-text"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[X] ans</mark></div><div class="proof-lbl">D'expérience opérationnelle</div></div>
-      <div><div class="proof-val" style="color: var(--white);"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[X]+</mark></div><div class="proof-lbl">Business structurés</div></div>
-      <div><div class="proof-val" style="color: var(--cyan-400);"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[X]h</mark></div><div class="proof-lbl">Rendues chaque mois</div></div>
-      <div><div class="proof-val" style="color: var(--green-400);">15+</div><div class="proof-lbl">Outils maîtrisés</div></div>
-    </div>
-  </div>
-</div>
-
 <!-- ============================================================ -->
 <!-- 2. IDENTIFICATION — Le miroir                                  -->
 <!-- ============================================================ -->
-<section class="section" style="background: linear-gradient(180deg, transparent, rgba(198,93,69,0.02), transparent);">
+<section id="pour-qui" class="section" style="background: linear-gradient(180deg, transparent, rgba(198,93,69,0.02), transparent);">
   <div class="container-narrow" style="text-align: center;">
-    <span class="label">Vous vous reconnaissez ?</span>
-    <h2 class="fade-up">6 symptômes.<br/><span class="serif">Combien vous concernent ?</span></h2>
+    <span class="label">Pour qui ? · Vous vous reconnaissez ?</span>
+    <h2 class="fade-up">10 symptômes.<br/><span class="serif">Combien vous concernent ?</span></h2>
     <p class="fade-up" style="max-width: 600px; margin: 0 auto 48px;">Je n'invente rien : ce sont les mêmes phrases qui reviennent à chaque échange.</p>
 
     <div style="display: grid; gap: 14px; max-width: 720px; margin: 0 auto;" class="fade-up">
@@ -1888,6 +1882,18 @@
       </div>
       <div class="pain-card">
         <p style="color: var(--gray-200); margin: 0;"><strong style="color: var(--purple-400);">« Impossible de déléguer ou de prendre des vacances. »</strong> Vous aimeriez souffler, mais sans structure ni procédures, déléguer vous coûte plus d'énergie que de tout faire vous-même.</p>
+      </div>
+      <div class="pain-card">
+        <p style="color: var(--gray-200); margin: 0;"><strong style="color: var(--purple-400);">« Ma communauté grandit, mais je perds le lien. »</strong> Au début vous connaissiez tout le monde. Maintenant elle grossit et vous n'arrivez plus à maintenir la qualité du contact. Certains membres s'éteignent en silence et vous ne le voyez qu'après leur départ.</p>
+      </div>
+      <div class="pain-card">
+        <p style="color: var(--gray-200); margin: 0;"><strong style="color: var(--purple-400);">« Je ne sais pas pourquoi mes clients ou membres partent. »</strong> Pas de retour structuré, pas de feedback fiable. Vous découvrez les problèmes trop tard, quand ils ont déjà décidé de partir.</p>
+      </div>
+      <div class="pain-card">
+        <p style="color: var(--gray-200); margin: 0;"><strong style="color: var(--purple-400);">« Mon service client repose entièrement sur moi. »</strong> Si vous n'êtes pas là, les questions restent sans réponse. Pas de relais, pas de process clair : impossible de déléguer sans tout réexpliquer à chaque fois.</p>
+      </div>
+      <div class="pain-card">
+        <p style="color: var(--gray-200); margin: 0;"><strong style="color: var(--purple-400);">« Je n'ai aucun suivi après la vente. »</strong> Vous vous battez pour acquérir des clients, et après ? Pas d'onboarding structuré, pas d'animation, pas de rétention. La relation s'arrête au paiement.</p>
       </div>
     </div>
 
@@ -1944,7 +1950,7 @@
 
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px;" class="fade-up">
       <div class="card" style="border-color: rgba(198,93,69,0.1); text-align: center;">
-        <div style="font-family: 'JetBrains Mono', monospace; font-size: 3.5rem; font-weight: 800; color: var(--red-400); line-height: 1; margin-bottom: 12px;"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[X]h</mark></div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 3.5rem; font-weight: 800; color: var(--red-400); line-height: 1; margin-bottom: 12px;">Des heures</div>
         <p style="margin: 0;">Englouties <strong style="color: var(--white);">chaque mois</strong> dans des tâches répétitives et sans valeur, que vous pourriez documenter, automatiser ou déléguer.</p>
       </div>
       <div class="card" style="border-color: rgba(198,93,69,0.1); text-align: center;">
@@ -1954,6 +1960,26 @@
       <div class="card" style="border-color: rgba(198,93,69,0.1); text-align: center;">
         <div style="font-family: 'JetBrains Mono', monospace; font-size: 3.5rem; font-weight: 800; color: var(--gray-400); line-height: 1; margin-bottom: 12px;">Burnout</div>
         <p style="margin: 0;">Un risque réel <strong style="color: var(--white);">d'épuisement</strong> : surcharge permanente, fatigue qui s'accumule, plaisir d'entreprendre qui s'érode mois après mois.</p>
+      </div>
+    </div>
+
+    <!-- LES CHIFFRES -->
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 48px;" class="fade-up stats-band">
+      <div class="card" style="text-align: center; border-color: rgba(198,93,69,0.1);">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 2.5rem; font-weight: 800; color: var(--red-400); line-height: 1; margin-bottom: 10px;">60%</div>
+        <p style="margin: 0; font-size: 0.875rem;">du temps d'un entrepreneur part dans des tâches opérationnelles qui ne font pas grandir le business.<br/><span style="font-size: 0.7rem; color: var(--gray-500);">Asana · « Anatomy of Work »</span></p>
+      </div>
+      <div class="card" style="text-align: center; border-color: rgba(198,93,69,0.1);">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 2.5rem; font-weight: 800; color: var(--amber-400); line-height: 1; margin-bottom: 10px;">16-20h</div>
+        <p style="margin: 0; font-size: 0.875rem;">par semaine passées sur l'admin, les relances, la coordination et le SAV.<br/><span style="font-size: 0.7rem; color: var(--gray-500);">Études SCORE / Fundera (TPE-PME)</span></p>
+      </div>
+      <div class="card" style="text-align: center; border-color: rgba(198,93,69,0.1);">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 2.5rem; font-weight: 800; color: var(--gray-400); line-height: 1; margin-bottom: 10px;">120j</div>
+        <p style="margin: 0; font-size: 0.875rem;">par an perdus sur des activités à faible valeur ajoutée.<br/><span style="font-size: 0.7rem; color: var(--gray-500);">QuickBooks · étude PME</span></p>
+      </div>
+      <div class="card" style="text-align: center; border-color: rgba(125,148,130,0.12);">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 2.5rem; font-weight: 800; color: var(--cyan-400); line-height: 1; margin-bottom: 10px;">40%</div>
+        <p style="margin: 0; font-size: 0.875rem;">des tâches courantes pourraient être automatisées avec les outils existants.<br/><span style="font-size: 0.7rem; color: var(--gray-500);">McKinsey Global Institute</span></p>
       </div>
     </div>
 
@@ -1970,19 +1996,16 @@
 <!-- ============================================================ -->
 <!-- 4. CRÉDIBILITÉ — Pourquoi moi                                  -->
 <!-- ============================================================ -->
-<section class="section">
+<section id="qui-je-suis" class="section">
   <div class="container" style="text-align: center;">
     <span class="label">Qui je suis</span>
     <h2 class="fade-up">Je structure et je pilote<br/>votre opérationnel. <span class="serif">À votre place.</span></h2>
 
     <div class="about-split fade-up">
       <!-- PHOTO -->
-      <div>
+      <div class="about-photo-col">
         <div class="about-photo-wrapper">
-          <div class="about-photo" style="display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(150deg,#e3a98f,#c2674e 45%,#7d9482);color:#fdfaf4;text-align:center;gap:10px;">
-            <div style="font-family:'Outfit',sans-serif;font-weight:900;font-size:5rem;letter-spacing:-0.04em;line-height:1;">LG</div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;opacity:0.92;">Photo de Laura · à insérer</div>
-          </div>
+          <img class="about-photo" src="laura.jpg" alt="Laura Gabriele, Online Business Manager" loading="lazy" style="object-position: center 25%;" />
           <div class="about-photo-glow"></div>
         </div>
         <div class="about-name">Laura Gabriele · Online Business Manager</div>
@@ -1991,7 +2014,10 @@
       <!-- TEXT -->
       <div class="about-text">
         <p>
-          <mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[À PERSONNALISER : parcours de Laura, ses années en gestion de projet et coordination, et ce qui l'a menée à l'OBM.]</mark> Au fil de ces expériences, j'ai compris une chose simple : ce qui fait tourner un business, ce n'est pas l'inspiration du moment, c'est <strong style="color: var(--white);">une structure claire, des process documentés et des outils qui travaillent pour vous.</strong>
+          5h du matin, 25 patients, zéro droit à l'erreur : pendant des années, c'était mon quotidien d'<strong style="color: var(--white);">infirmière libérale</strong>. C'est là, sous pression, que j'ai appris à tenir une structure, à décider en temps réel et à ne jamais perdre le lien humain.
+        </p>
+        <p>
+          Au fil de ces expériences, j'ai compris une chose simple : ce qui fait tourner un business, ce n'est pas l'inspiration du moment, c'est <strong style="color: var(--white);">une structure claire, des process documentés et des outils qui travaillent pour vous.</strong>
         </p>
         <p>
           En accompagnant des entrepreneurs, j'ai vu le même schéma se répéter : des personnes brillantes, débordées, qui s'épuisent non par manque de travail, mais par <strong style="color: var(--purple-400);">absence de structure opérationnelle.</strong>
@@ -2000,43 +2026,8 @@
           Mon métier, c'est d'installer cette structure et de la piloter à votre place : cartographier ce que vous portez, documenter vos process, connecter vos outils, automatiser ce qui peut l'être et organiser la délégation, pour que votre business avance sans dépendre uniquement de vous.
         </p>
         <p style="color: var(--white); font-weight: 600;">
-          En tant qu'OBM, je deviens votre bras droit opérationnel : vous gardez la vision, je fais tourner la machine.
+          Aujourd'hui, je suis votre bras droit opérationnel : vous gardez la vision, je fais tourner la machine. Il est temps que tout ce que vous avez mis en place et construit commence enfin à travailler pour vous.
         </p>
-      </div>
-    </div>
-
-    <p class="fade-up" style="margin-top: 56px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gray-500); text-align: center;">Ma boîte à outils</p>
-
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 24px;" class="fade-up">
-      <div class="card" style="text-align: center;">
-        <div style="font-size: 1.25rem; font-weight: 800; color: var(--white); margin-bottom: 4px; letter-spacing: -0.02em;">Notion</div>
-        <div style="font-size: 0.75rem; color: var(--gray-500); margin-bottom: 8px;">Organisation & documentation</div>
-        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; color: var(--purple-400); font-weight: 600;">Maîtrisé</div>
-      </div>
-      <div class="card" style="text-align: center;">
-        <div style="font-size: 1.25rem; font-weight: 800; color: var(--white); margin-bottom: 4px;">ClickUp</div>
-        <div style="font-size: 0.75rem; color: var(--gray-500); margin-bottom: 8px;">Gestion de projet</div>
-        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; color: var(--purple-400); font-weight: 600;">Maîtrisé</div>
-      </div>
-      <div class="card" style="text-align: center;">
-        <div style="font-size: 1.25rem; font-weight: 800; color: var(--white); margin-bottom: 4px;">Asana</div>
-        <div style="font-size: 0.75rem; color: var(--gray-500); margin-bottom: 8px;">Gestion de projet</div>
-        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; color: var(--purple-400); font-weight: 600;">Maîtrisé</div>
-      </div>
-      <div class="card" style="text-align: center;">
-        <div style="font-size: 1.25rem; font-weight: 800; color: var(--white); margin-bottom: 4px;">Make / Zapier</div>
-        <div style="font-size: 0.75rem; color: var(--gray-500); margin-bottom: 8px;">Automatisation</div>
-        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; color: var(--purple-400); font-weight: 600;">Maîtrisé</div>
-      </div>
-      <div class="card" style="text-align: center;">
-        <div style="font-size: 1.25rem; font-weight: 800; color: var(--white); margin-bottom: 4px;">Airtable</div>
-        <div style="font-size: 0.75rem; color: var(--gray-500); margin-bottom: 8px;">Base de données</div>
-        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; color: var(--purple-400); font-weight: 600;">Maîtrisé</div>
-      </div>
-      <div class="card" style="text-align: center;">
-        <div style="font-size: 1.25rem; font-weight: 800; color: var(--white); margin-bottom: 4px;">Slack / Google Workspace</div>
-        <div style="font-size: 0.75rem; color: var(--gray-500); margin-bottom: 8px;">Collaboration</div>
-        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.8125rem; color: var(--purple-400); font-weight: 600;">Maîtrisé</div>
       </div>
     </div>
   </div>
@@ -2055,89 +2046,10 @@
       Les formations vous donnent des cours, les coachs vous motivent. <strong style="color: var(--white);">Personne ne vous installe ni ne pilote un vrai système opérationnel.</strong> C'est exactement ce que je fais.
     </p>
 
-    <!-- ICEBERG — PYRAMID VISUALIZATION -->
-    <div class="iceberg-scene fade-up">
-      <div class="iceberg-title">L'iceberg de votre charge</div>
-
-      <div class="iceberg-shape">
-
-        <!-- TIP: 3% above water -->
-        <div class="ice-tier ice-tier--1">
-          <div class="ice-tier-content">
-            <div class="ice-tier-left">
-              <div class="ice-tier-pct">3%</div>
-              <div class="ice-tier-name">Ce que vos clients voient · le livrable</div>
-            </div>
-            <div class="ice-tier-tag" style="background: rgba(198,93,69,0.15); color: #c65d45;">visible</div>
-          </div>
-        </div>
-
-        <!-- WATERLINE -->
-        <div class="ice-waterline">
-          <div class="ice-waterline-line"></div>
-          <div class="ice-waterline-wave"></div>
-          <div class="ice-waterline-label">ligne de flottaison</div>
-        </div>
-
-        <!-- UNDERWATER TIERS -->
-        <div class="ice-underwater">
-
-          <div class="ice-tier ice-tier--2">
-            <div class="ice-tier-content">
-              <div class="ice-tier-left">
-                <div class="ice-tier-pct">7%</div>
-                <div class="ice-tier-name">Admin, facturation, relances</div>
-              </div>
-              <div class="ice-tier-tag" style="background: rgba(194,103,78,0.12); color: var(--purple-400);">porté en solo</div>
-            </div>
-          </div>
-
-          <div class="ice-tier ice-tier--3" style="margin-top: 3px;">
-            <div class="ice-tier-content">
-              <div class="ice-tier-left">
-                <div class="ice-tier-pct">10%</div>
-                <div class="ice-tier-name">Gestion de projet & coordination</div>
-              </div>
-              <div class="ice-tier-tag" style="background: rgba(194,103,78,0.12); color: var(--purple-400);">porté en solo</div>
-            </div>
-          </div>
-
-          <div class="ice-tier ice-tier--4" style="margin-top: 3px;">
-            <div class="ice-tier-content">
-              <div class="ice-tier-left">
-                <div class="ice-tier-pct">20%</div>
-                <div class="ice-tier-name">Outils, process, automatisations</div>
-              </div>
-              <div class="ice-tier-tag" style="background: rgba(194,103,78,0.12); color: var(--purple-400);">porté en solo</div>
-            </div>
-          </div>
-
-          <div class="ice-tier ice-tier--5" style="margin-top: 3px;">
-            <div class="ice-tier-content">
-              <div class="ice-tier-left">
-                <div class="ice-tier-pct">60%</div>
-                <div class="ice-tier-name">Tout le reste : SAV, reporting, imprévus</div>
-              </div>
-              <div class="ice-tier-tag" style="background: rgba(194,103,78,0.12); color: var(--purple-400);">porté en solo</div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- + de 90% conclusion -->
-      <div class="ice-conclusion">
-        <div class="ice-conclusion-num">+ de 90%</div>
-        <p>de votre énergie engloutie par l'opérationnel invisible.<br/><strong style="color: var(--white);">C'est exactement ce que je reprends.</strong></p>
-      </div>
-
-    </div>
-
     <!-- CYCLE — ORBITAL SYSTEM -->
     <h3 class="fade-up" style="margin-top: 80px;">La boucle de <span class="serif">la Méthode L.G</span></h3>
     <p class="fade-up" style="max-width: 600px; margin: 0 auto 8px;">
-      Ce n'est pas un tunnel linéaire. C'est une boucle :<br/>on diagnostique <span style="color: var(--purple-400);">→</span> on structure <span style="color: var(--purple-400);">→</span> on outille <span style="color: var(--purple-400);">→</span> on pilote <span style="color: var(--purple-400);">→</span> on délègue <span style="color: var(--purple-400);">→</span> on optimise.<br/>Six étapes, zéro improvisation.
+      Ce n'est pas un tunnel linéaire. C'est une boucle :<br/>on diagnostique <span style="color: var(--purple-400);">→</span> on structure <span style="color: var(--purple-400);">→</span> on soigne l'expérience client <span style="color: var(--purple-400);">→</span> on pilote <span style="color: var(--purple-400);">→</span> on délègue <span style="color: var(--purple-400);">→</span> on optimise.<br/>Six étapes, zéro improvisation.
     </p>
 
     <!-- DESKTOP: Orbital circle -->
@@ -2186,7 +2098,7 @@
             <div class="orbit-node-num">ÉTAPE 01</div>
             <div class="orbit-node-icon">🔍</div>
             <div class="orbit-node-title">Diagnostic</div>
-            <div class="orbit-node-desc">Audit complet de votre opérationnel : tâches, outils, process, points de friction. On cartographie tout ce que vous portez.</div>
+            <div class="orbit-node-desc">Audit complet de votre opérationnel ET de votre parcours client : tâches, outils, process, points de friction. On cartographie tout ce que vous portez.</div>
           </div>
         </div>
 
@@ -2195,16 +2107,16 @@
             <div class="orbit-node-num">ÉTAPE 02</div>
             <div class="orbit-node-icon">🧱</div>
             <div class="orbit-node-title">Structuration</div>
-            <div class="orbit-node-desc">On conçoit vos systèmes et process : procédures documentées (SOP), organisation Notion, flux de travail clairs.</div>
+            <div class="orbit-node-desc">On conçoit vos systèmes, vos process et vos automatisations, ainsi que vos trames de communication client : procédures documentées (SOP), organisation Notion, flux de travail clairs.</div>
           </div>
         </div>
 
         <div class="orbit-node">
           <div class="orbit-node-inner">
             <div class="orbit-node-num">ÉTAPE 03</div>
-            <div class="orbit-node-icon">⚙️</div>
-            <div class="orbit-node-title">Outils & automatisations</div>
-            <div class="orbit-node-desc">On choisit et connecte les bons outils, on automatise les tâches répétitives (Make / Zapier) pour vous faire gagner des heures.</div>
+            <div class="orbit-node-icon">💛</div>
+            <div class="orbit-node-title">Expérience client</div>
+            <div class="orbit-node-desc">On structure le parcours client de bout en bout : onboarding, animation de votre communauté, fidélisation. Vos clients sont accompagnés, pas seulement encaissés.</div>
           </div>
         </div>
 
@@ -2213,7 +2125,7 @@
             <div class="orbit-node-num">ÉTAPE 04</div>
             <div class="orbit-node-icon">📊</div>
             <div class="orbit-node-title">Pilotage</div>
-            <div class="orbit-node-desc">Gestion de projet, suivi des priorités, tableau de bord KPIs. Vous voyez enfin où en est votre business en un coup d'œil.</div>
+            <div class="orbit-node-desc">Suivi hebdo, gestion de projet, suivi des priorités, tableau de bord KPIs. Vous voyez enfin où en est votre business en un coup d'œil.</div>
           </div>
         </div>
 
@@ -2221,8 +2133,8 @@
           <div class="orbit-node-inner">
             <div class="orbit-node-num">ÉTAPE 05</div>
             <div class="orbit-node-icon">🤝</div>
-            <div class="orbit-node-title">Équipe & délégation</div>
-            <div class="orbit-node-desc">On structure la délégation : qui fait quoi, comment, avec quels process. Votre équipe (ou vos prestataires) avance sans vous attendre.</div>
+            <div class="orbit-node-title">Délégation & rétention</div>
+            <div class="orbit-node-desc">On structure la délégation (qui fait quoi, comment, avec quels process) et on repère les signaux de désengagement avant qu'un client ne parte en silence. Votre équipe avance sans vous attendre.</div>
           </div>
         </div>
 
@@ -2231,7 +2143,7 @@
             <div class="orbit-node-num">ÉTAPE 06</div>
             <div class="orbit-node-icon">🔄</div>
             <div class="orbit-node-title">Optimisation continue</div>
-            <div class="orbit-node-desc">On mesure, on ajuste, on améliore. La machine tourne et se perfectionne, vous restez concentré sur votre zone de génie.</div>
+            <div class="orbit-node-desc">On mesure, on ajuste, on améliore, côté opérationnel comme côté expérience client. La machine tourne et se perfectionne, vous restez concentré sur votre zone de génie.</div>
           </div>
         </div>
 
@@ -2243,32 +2155,32 @@
       <div class="orbit-m-step">
         <div class="orbit-m-num">ÉTAPE 01</div>
         <div class="orbit-m-title">🔍 Diagnostic</div>
-        <div class="orbit-m-desc">Audit complet de votre opérationnel : tâches, outils, process, points de friction. On cartographie tout ce que vous portez.</div>
+        <div class="orbit-m-desc">Audit complet de votre opérationnel ET de votre parcours client : tâches, outils, process, points de friction. On cartographie tout ce que vous portez.</div>
       </div>
       <div class="orbit-m-step">
         <div class="orbit-m-num">ÉTAPE 02</div>
         <div class="orbit-m-title">🧱 Structuration</div>
-        <div class="orbit-m-desc">On conçoit vos systèmes et process : procédures documentées (SOP), organisation Notion, flux de travail clairs.</div>
+        <div class="orbit-m-desc">On conçoit vos systèmes, vos process et vos automatisations, ainsi que vos trames de communication client : procédures documentées (SOP), organisation Notion, flux de travail clairs.</div>
       </div>
       <div class="orbit-m-step">
         <div class="orbit-m-num">ÉTAPE 03</div>
-        <div class="orbit-m-title">⚙️ Outils & automatisations</div>
-        <div class="orbit-m-desc">On choisit et connecte les bons outils, on automatise les tâches répétitives (Make / Zapier) pour vous faire gagner des heures.</div>
+        <div class="orbit-m-title">💛 Expérience client</div>
+        <div class="orbit-m-desc">On structure le parcours client de bout en bout : onboarding, animation de votre communauté, fidélisation. Vos clients sont accompagnés, pas seulement encaissés.</div>
       </div>
       <div class="orbit-m-step">
         <div class="orbit-m-num">ÉTAPE 04</div>
         <div class="orbit-m-title">📊 Pilotage</div>
-        <div class="orbit-m-desc">Gestion de projet, suivi des priorités, tableau de bord KPIs. Vous voyez enfin où en est votre business en un coup d'œil.</div>
+        <div class="orbit-m-desc">Suivi hebdo, gestion de projet, suivi des priorités, tableau de bord KPIs. Vous voyez enfin où en est votre business en un coup d'œil.</div>
       </div>
       <div class="orbit-m-step">
         <div class="orbit-m-num">ÉTAPE 05</div>
-        <div class="orbit-m-title">🤝 Équipe & délégation</div>
-        <div class="orbit-m-desc">On structure la délégation : qui fait quoi, comment, avec quels process. Votre équipe (ou vos prestataires) avance sans vous attendre.</div>
+        <div class="orbit-m-title">🤝 Délégation & rétention</div>
+        <div class="orbit-m-desc">On structure la délégation (qui fait quoi, comment, avec quels process) et on repère les signaux de désengagement avant qu'un client ne parte en silence. Votre équipe avance sans vous attendre.</div>
       </div>
       <div class="orbit-m-step">
         <div class="orbit-m-num">ÉTAPE 06</div>
         <div class="orbit-m-title">🔄 Optimisation continue</div>
-        <div class="orbit-m-desc">On mesure, on ajuste, on améliore. La machine tourne et se perfectionne, vous restez concentré sur votre zone de génie.</div>
+        <div class="orbit-m-desc">On mesure, on ajuste, on améliore, côté opérationnel comme côté expérience client. La machine tourne et se perfectionne, vous restez concentré sur votre zone de génie.</div>
       </div>
       <div class="orbit-loop-back">↻ La boucle se referme · Étape 06 alimente Étape 01</div>
     </div>
@@ -2735,9 +2647,12 @@
 <section id="offres" class="offers-section">
   <div class="container" style="text-align: center; position: relative; z-index: 1;">
     <span class="label">Les offres</span>
-    <h2 class="fade-up">Deux façons de travailler ensemble.<br/>Du diagnostic au <span class="serif">pilotage.</span></h2>
+    <h2 class="fade-up">Plusieurs façons de travailler ensemble.<br/>Du diagnostic à la <span class="serif">fidélisation.</span></h2>
     <p class="fade-up" style="max-width: 580px; margin: 0 auto; font-size: 1.0625rem;">
       Que vous vouliez d'abord y voir clair, structurer tout votre opérationnel d'un coup, ou être accompagné dans la durée.
+    </p>
+    <p class="fade-up" style="max-width: 520px; margin: 14px auto 0; font-size: 0.8125rem; color: var(--gray-500); font-style: italic;">
+      Je suis en train d'affiner le détail de mes offres : les modalités exactes peuvent encore évoluer.
     </p>
 
     <div class="offers-wrapper fade-up">
@@ -2747,13 +2662,13 @@
         <div class="o-card-inner">
           <div class="o-header">
             <div class="o-name">AUDIT</div>
-            <div class="o-tagline">Votre feuille de route opérationnelle</div>
+            <div class="o-tagline">Votre feuille de route opérationnelle · 30 jours</div>
           </div>
 
           <div class="o-pricing">
-            <div class="o-price gradient-text"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[PRIX À DÉFINIR]</mark></div>
+            <div class="o-price gradient-text" style="font-size: 2.75rem;">2 000 €<span style="font-size: 0.3em; color: var(--gray-500); font-weight: 600;"> HT</span></div>
             <div class="o-duration">Diagnostic complet · Entrepreneurs débordés</div>
-            <div class="o-installment" style="background: rgba(194,103,78,0.08); color: var(--purple-400);"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[modalités à définir]</mark></div>
+            <div class="o-installment" style="background: rgba(194,103,78,0.08); color: var(--purple-400);">⏱️ 30 jours</div>
           </div>
 
           <div class="o-sep" style="background: linear-gradient(90deg, transparent, rgba(40,38,34,0.08), transparent);"></div>
@@ -2797,15 +2712,15 @@
         <div class="o-card-inner">
           <div class="o-header">
             <div class="o-name" style="font-size: 2rem;">SPRINT STRUCTURATION</div>
-            <div class="o-tagline" style="color: var(--gray-400);">Tout votre opérationnel structuré, clé en main</div>
+            <div class="o-tagline" style="color: var(--gray-400);">Tout votre opérationnel structuré, clé en main · 6 mois</div>
           </div>
 
           <div class="o-pricing">
             <div class="o-price">
-              <span class="gradient-text"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[PRIX À DÉFINIR]</mark></span>
+              <span class="gradient-text">2 300 €<span style="font-size: 0.28em; color: var(--gray-400); font-weight: 600;"> HT</span></span>
             </div>
-            <div class="o-duration" style="color: var(--gray-300);">Un sprint complet · Entrepreneurs en croissance</div>
-            <div class="o-installment" style="background: rgba(125,148,130,0.08); color: var(--cyan-400);"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[modalités à définir]</mark></div>
+            <div class="o-duration" style="color: var(--gray-300);">Un sprint complet de 6 mois · Entrepreneurs en croissance</div>
+            <div class="o-installment" style="background: rgba(125,148,130,0.08); color: var(--cyan-400);">⏱️ 6 mois d'accompagnement</div>
           </div>
 
           <div class="o-sep" style="background: linear-gradient(90deg, transparent, rgba(194,103,78,0.25), rgba(125,148,130,0.15), transparent);"></div>
@@ -2861,13 +2776,13 @@
       <div class="o-card o-card--entreprise">
         <div class="o-card-inner">
           <div class="o-header">
-            <div class="o-name">PILOTAGE CONTINU</div>
-            <div class="o-tagline">Votre bras droit opérationnel, chaque mois</div>
+            <div class="o-name">ROADMAP</div>
+            <div class="o-tagline">Le suivi de l'audit, déployé sur 4 mois</div>
           </div>
 
           <div class="o-pricing">
-            <div class="o-price" style="font-size: 2.5rem; background: linear-gradient(135deg, #5c7650, #6f8a5f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[PRIX/MOIS À DÉFINIR]</mark></div>
-            <div class="o-duration">Accompagnement récurrent · Au mois</div>
+            <div class="o-price" style="font-size: 2.5rem; background: linear-gradient(135deg, #5c7650, #6f8a5f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">2 500 €<span style="font-size: 0.32em; color: var(--gray-500); font-weight: 600;"> HT</span></div>
+            <div class="o-duration">Accompagnement structuré · 4 mois</div>
             <div class="o-installment" style="background: rgba(92,118,80,0.08); color: #5c7650;">📞 Échange découverte gratuit</div>
           </div>
 
@@ -2901,15 +2816,30 @@
           </div>
 
           <div class="o-partner">
-            <div class="o-partner-label">Engagement</div>
-            <div class="o-partner-name">Au mois<span> · sans engagement long</span></div>
-            <div class="o-partner-desc">Un accompagnement souple qui s'arrête quand votre organisation tourne seule.</div>
+            <div class="o-partner-label">Idéal après</div>
+            <div class="o-partner-name">L'Audit<span> · la suite logique</span></div>
+            <div class="o-partner-desc">On déroule votre feuille de route sur 4 mois : structuration, outils, pilotage, étape par étape.</div>
           </div>
 
-          <a href="#contact" class="o-cta o-cta--outline">Discuter du pilotage →</a>
+          <a href="#contact" class="o-cta o-cta--outline">Discuter de la roadmap →</a>
         </div>
       </div>
 
+    </div>
+
+    <!-- ===== 4e OFFRE · EXCLU FIDÉLISATION ===== -->
+    <div class="fade-up" style="max-width: 920px; margin: 32px auto 0; padding: 2px; border-radius: 26px; background: linear-gradient(135deg, rgba(194,103,78,0.25), rgba(125,148,130,0.12), rgba(194,103,78,0.18));">
+      <div style="border-radius: 24px; padding: 36px 40px; background: linear-gradient(175deg, rgba(235,227,214,0.97), rgba(241,235,223,0.99)); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px; text-align: left;">
+        <div style="flex: 1; min-width: 280px;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.5625rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; color: var(--purple-400); margin-bottom: 8px;">⭐ Offre exclusive · Fidélisation</div>
+          <div style="font-size: 1.625rem; font-weight: 900; color: var(--ink, #282622); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 8px;">Customer care &amp; success</div>
+          <p style="margin: 0; font-size: 0.875rem; color: var(--gray-400); line-height: 1.6; max-width: 520px;">On structure tout l'après-vente : onboarding, animation de votre communauté, suivi des clients et rétention. Vos clients restent, votre communauté reste vivante, même quand vous n'êtes pas là.</p>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 2.25rem; font-weight: 900; letter-spacing: -0.04em;" class="gradient-text">2 000 €<span style="font-size: 0.4em; color: var(--gray-500); font-weight: 600;"> HT</span></div>
+          <a href="#contact" class="o-cta o-cta--ghost" style="margin-top: 14px; display: inline-block;">En savoir plus →</a>
+        </div>
+      </div>
     </div>
 
     <!-- VALUE STACK — PREMIUM -->
@@ -2918,25 +2848,21 @@
         <h4 style="text-align: center; margin-bottom: 36px; font-size: 1.25rem;">Ce que contient le <span class="serif">Sprint Structuration</span></h4>
 
         <div class="vs-grid">
-          <div class="vs-item"><div class="vs-label">Audit opérationnel complet</div><div class="vs-val">[valeur]</div></div>
-          <div class="vs-item"><div class="vs-label">Refonte & centralisation Notion</div><div class="vs-val">[valeur]</div></div>
-          <div class="vs-item"><div class="vs-label">Procédures documentées (SOP)</div><div class="vs-val">[valeur]</div></div>
-          <div class="vs-item"><div class="vs-label">Mise en place des outils</div><div class="vs-val">[valeur]</div></div>
-          <div class="vs-item"><div class="vs-label">Pack automatisations (Make / Zapier)</div><div class="vs-val">[valeur]</div></div>
-          <div class="vs-item"><div class="vs-label">Tableau de bord KPIs</div><div class="vs-val">[valeur]</div></div>
-          <div class="vs-item"><div class="vs-label">Structuration de la délégation</div><div class="vs-val">[valeur]</div></div>
-          <div class="vs-item"><div class="vs-label">Calls 1:1 de pilotage</div><div class="vs-val">[valeur]</div></div>
+          <div class="vs-item"><div class="vs-label">Audit opérationnel complet</div><div class="vs-val" style="color: var(--green-400);">Inclus</div></div>
+          <div class="vs-item"><div class="vs-label">Refonte & centralisation Notion</div><div class="vs-val" style="color: var(--green-400);">Inclus</div></div>
+          <div class="vs-item"><div class="vs-label">Procédures documentées (SOP)</div><div class="vs-val" style="color: var(--green-400);">Inclus</div></div>
+          <div class="vs-item"><div class="vs-label">Mise en place des outils</div><div class="vs-val" style="color: var(--green-400);">Inclus</div></div>
+          <div class="vs-item"><div class="vs-label">Pack automatisations (Make / Zapier)</div><div class="vs-val" style="color: var(--green-400);">Inclus</div></div>
+          <div class="vs-item"><div class="vs-label">Tableau de bord KPIs</div><div class="vs-val" style="color: var(--green-400);">Inclus</div></div>
+          <div class="vs-item"><div class="vs-label">Structuration de la délégation</div><div class="vs-val" style="color: var(--green-400);">Inclus</div></div>
+          <div class="vs-item"><div class="vs-label">Calls 1:1 de pilotage</div><div class="vs-val" style="color: var(--green-400);">Inclus</div></div>
         </div>
 
         <div style="display: flex; justify-content: space-between; align-items: center; padding: 24px 0 0; margin-top: 20px; border-top: 2px solid rgba(194,103,78,0.25);">
-          <div style="font-size: 1.125rem; font-weight: 700; color: var(--white);">Valeur totale</div>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; font-weight: 800; color: var(--purple-400);"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[À DÉFINIR]</mark></div>
+          <div style="font-size: 1.375rem; font-weight: 800; color: var(--white);">Votre investissement</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 2.25rem; font-weight: 900;" class="gradient-text">2 300 €<span style="font-size: 0.4em; color: var(--gray-500); font-weight: 600;"> HT</span></div>
         </div>
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px 0 0;">
-          <div style="font-size: 1.375rem; font-weight: 800; color: var(--white);">Vous payez</div>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 2.25rem; font-weight: 900;" class="gradient-text"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[À DÉFINIR]</mark></div>
-        </div>
-        <p style="text-align: center; margin-top: 16px; font-size: 0.8125rem; color: var(--gray-500);"><mark style="background:rgba(194,103,78,0.16);color:#9e4d37;padding:0 6px;border-radius:4px;font-weight:600;">[modalités de paiement à préciser]</mark></p>
+        <p style="text-align: center; margin-top: 16px; font-size: 0.8125rem; color: var(--gray-500);">Sprint Structuration · 6 mois d'accompagnement · modalités de paiement adaptées à votre situation.</p>
       </div>
     </div>
   </div>
@@ -2949,7 +2875,7 @@
 <!-- ============================================================ -->
 <section class="section">
   <div class="container" style="text-align: center;">
-    <span class="label">Résultats</span>
+    <span class="label" id="resultats">Résultats · Témoignages</span>
     <h2 class="fade-up">Ce que disent ceux<br/>qui ont <span class="serif">fait le pas</span></h2>
 
     <div class="testi-grid fade-up stagger-children">
